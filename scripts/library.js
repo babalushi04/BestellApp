@@ -4,37 +4,37 @@ let myDishes = [
         "price":"12.99",
         "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
         "amount":"0"
-    }
+    },
     {
         "name":"Vegetarische Lasagne",
         "price":"9.99",
         "description":"Eine leckere Lasagne mit frischem Gemüse und Käse.",
         "amount":"0"
-    }
+    },
     {
         "name":"Hamburger",
         "price":"10.99",
         "description":"Ein saftiger Hamburger mit frischem Salat, Tomate und Zwiebel.",
         "amount":"0"
-    }
+    },
     {
         "name":"Chicken Burger",
         "price":"11.99",
         "description":"Ein würziger Chicken Burger mit knusprigem Hähnchenfilet und frischem Gemüse.",
         "amount":"0"
-    }
+    },
     {
         "name":"Margherita Pizza",
         "price":"10.99",
         "description":"Eine einfache Pizza mit Tomatensauce, frischem Mozzarella und Basilikum.",
         "amount":"0"
-    }
+    },
     {
         "name":"Salami Pizza",
         "price":"11.99",
         "description":"Eine herzhafte Pizza mit würziger Salami und Käse.",
         "amount":"0"
-    }
+    },
     {
         "name":"Diavola Pizza",
         "price":"12.99",
@@ -54,7 +54,7 @@ let myBeilages = [
         "price":"4.00",
         "description":"Frisches Knoblauchbrot, perfekt als Beilage.",
         "amount":"0"
-    }
+    },
     {
         "name":"Bauern Salat",
         "price":"5.00",
@@ -86,7 +86,7 @@ let myDrinks = [
         "price":"1.50",
         "description":"Erfrischendes Mineralwasser.",
         "amount":"0"
-    }
+    },
     {
         "name":"Apfelsaft",
         "price":"2.00",
