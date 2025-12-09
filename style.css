@@ -12,8 +12,6 @@ body {
 .content {
     width: calc(100% - 308px);
     padding : 20px;
-    border: 2px solid var(--prime orange);
-    background-color: var(--dark orange) !important;
     min-height: 100vh;
 }
 .basket_wrapper {
@@ -22,8 +20,6 @@ body {
     right: 0;
     top: 0;
     height: 100%;
-    border-left: 2px solid var(--prime orange);
-    background-color: var(--dark grey);
     padding: 20px;
     overflow-y: auto;
 }
