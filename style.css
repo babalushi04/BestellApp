@@ -17,6 +17,7 @@ body {
 .basket_wrapper {
     width: 300px;
     position: fixed;
+    flex-grow: 1;
     right: 0;
     top: 0;
     height: 100%;
