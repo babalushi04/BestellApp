@@ -4,16 +4,18 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
 body {
-    font-family: 'raleway', sans-serif;     
+    font-family: 'raleway', sans-serif;
     line-height: 1.6;
 }
 
 .content {
     width: calc(100% - 308px);
-    padding : 20px;
+    padding: 20px;
     min-height: 100vh;
 }
+
 .basket_wrapper {
     width: 300px;
     position: fixed;
@@ -24,8 +26,16 @@ body {
     padding: 20px;
     overflow-y: auto;
 }
+
 .section {
     display: block;
     unicode-bidi: isolate;
 
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 100;
 }
