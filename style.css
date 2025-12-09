@@ -8,3 +8,27 @@ body {
     font-family: 'raleway', sans-serif;     
     line-height: 1.6;
 }
+
+.content {
+    width: calc(100% - 308px);
+    padding : 20px;
+    border: 2px solid var(--prime orange);
+    background-color: var(--dark orange) !important;
+    min-height: 100vh;
+}
+.basket_wrapper {
+    width: 300px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-left: 2px solid var(--prime orange);
+    background-color: var(--dark grey);
+    padding: 20px;
+    overflow-y: auto;
+}
+.section {
+    display: block;
+    unicode-bidi: isolate;
+
+}
