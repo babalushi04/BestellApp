@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bestell App</title>
-    <link rel="stylesheet" href="./styles/basket.css">
-    <link rel="stylesheet" href="./styles/template.css">
-    <link rel="stylesheet" href="./style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bestell App</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/basket.css">
+  <link rel="stylesheet" href="./styles/template.css">
+  <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
 
-<body onclick="init()">
-    <header class="site-header">
-        <a class="site-logo" href="/" aria-label="Startseite">
-            <img class="logo-mv4" src="./assets/pics/Logo.png" alt="Bestell App Logo">
-        </a>
-    </header>
-    <main>
-        <section class="content" id="content">…</section>
-        <aside class="basket_wrapper" id="basket" aria-label="Warenkorb">…</aside>
-    </main>
-    <footer class="footer-py-3">
-        <div class="footer-text">© 2025 Bestell App</div>
-    </footer>
+ </head>
+<body>
+  <header>
+    <a class="site-logo" href="#" aria-label="Startseite">
+      <img src="./assets/pics/Logo.png" alt="Bestell App Logo">
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#menu-root">Speisekarte</a> | <a href="#basket">Warenkorb</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="menu-root" aria-live="polite"></section>
+    <aside id="basket" aria-label="Warenkorb" aria-live="polite">
+      <!-- wird von JS gefüllt -->
+    </aside>
+  </main>
+
+  <footer style="text-align:center; padding:12px; border-top:1px solid #eee;">
+    © 2025 Bestell App
+  </footer>
 </body>
-<script src="./scripts/library.js" defer></script>
-<script src="./scripts/template.js" defer></script>
-<script src="./script.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
+  <script src="./scripts/library.js" defer></script>
+  <script src="./scripts/template.js" defer></script>
+  <script src="./scripts/app.js" defer></script>
+  <script src="./script.js" defer></script>
 </html>

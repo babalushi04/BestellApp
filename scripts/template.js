@@ -1,25 +1,24 @@
-// Hilfen
+function asNumber(v){ const n = Number(v); return Number.isFinite(n) ? n : 0; }
 function euro(n){ return n.toFixed(2).replace('.', ',') + ' €'; }
-function asNumber(x){ const n = Number(x); return Number.isFinite(n) ? n : 0; }
 
-// Karte: ein Item
+// Eine Speise-Kachel
 function dishCardHTML(categoryKey, idx, item){
   const price = asNumber(item.price);
   return `
-    <article class="card">
-      <header class="card__header">
+    <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
+      <div class="card__header">
         <h3 class="card__title">${item.name}</h3>
         <div class="card__price">${euro(price)}</div>
-      </header>
+      </div>
       <p class="card__desc">${item.description}</p>
       <div class="card__actions">
-        <button class="btn" onclick="addToBasket('${categoryKey}', ${idx})">+</button>
+        <button class="btn" onclick="event.stopPropagation(); addToBasket('${categoryKey}', ${idx})">+</button>
       </div>
     </article>
   `;
 }
 
-// Karte: eine Kategorie mit Grid
+// Kategorie-Abschnitt
 function categorySectionHTML(title, categoryKey, list){
   const items = list.map((it, i) => dishCardHTML(categoryKey, i, it)).join('');
   return `
@@ -30,9 +29,8 @@ function categorySectionHTML(title, categoryKey, list){
   `;
 }
 
-// Warenkorb: Zeile
+// Warenkorb-Zeile
 function basketRowHTML(item){
-  // item: { id, name, price, qty }
   return `
     <div class="basket-row">
       <div class="basket-name">${item.name}</div>
@@ -42,7 +40,7 @@ function basketRowHTML(item){
         <button class="btn" onclick="incItem('${item.id}')">+</button>
       </div>
       <div class="basket-sum">${euro(item.price * item.qty)}</div>
-      <button class="btn btn--danger" title="Entfernen" onclick="removeItem('${item.id}')">x</button>
+      <button class="btn btn--ghost" title="Entfernen" onclick="removeItem('${item.id}')">x</button>
     </div>
   `;
 }

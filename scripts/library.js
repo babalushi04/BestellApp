@@ -1,5 +1,6 @@
 let myDishes = [
     {
+        "image":"./assets/pics/spaghetti-carbonara.jpg",
         "name":"Spaghetti Carbonara",
         "price":"12.99",
         "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
