@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    color: white;
+    padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -8,35 +8,8 @@
 body {
     font-family: 'raleway', sans-serif;
     line-height: 1.6;
-}
-
-.site-header {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: brown;
-    padding: 10px 0;
-}
-
-.content {
-    width: calc(100% - 308px);
-    padding: 20px;
-    min-height: 100vh;
-}
-
-.basket_wrapper {
-    width: 300px;
-    position: fixed;
-    flex-grow: 1;
-    right: 0;
-    top: 0;
-    height: 100%;
-    padding: 20px;
-    overflow-y: auto;
-}
-
-.section {
-    display: block;
-    unicode-bidi: isolate;
-
+    color: #222;
+    margin: 0;
 }
 
 .site-header {
@@ -46,104 +19,57 @@ body {
     display: flex;
     z-index: 100;
     justify-content: space-between;
-}
-
-.logo-mv4 {
-    width: 150px;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.footer-py-3 {
-    background-color: #4a1c4a;
-    text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-text {
-    color: white;
-    font-size: 36px;
-}
-
-:root {
-    --gap: 12px;
-    --radius: 12px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: system-ui, Arial, sans-serif;
-    color: #222;
-}
-
-.site-header {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    background: #fff;
-    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.nav {
+.logo-startseite {
+    width: 150px;
+}
+
+.main-wrapper {
     display: flex;
-    gap: 12px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
 }
 
-.nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 6px 10px;
-    border-radius: 8px;
+.content {
+    flex: 1;
+    padding: 20px;
+    max-width: calc(100% - 350px);
 }
 
-.nav a.active,
-.nav a:hover {
-    background: #f2f2f2;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 16px auto;
-    padding: 0 16px;
+.basket_wrapper {
+    width: 350px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    padding: 80px 20px 20px;
+    overflow-y: auto;
+    background: #f9f9f9;
+    border-left: 1px solid #eee;
 }
 
 .category {
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 
 .category__title {
-    margin: 8px 0 12px;
-}
-
-.grid {
-    display: grid;
-    gap: var(--gap);
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .card {
     border: 1px solid #eee;
-    border-radius: var(--radius);
-    padding: 12px;
+    border-radius: 12px;
+    padding: 16px;
     background: #fff;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .card__header {
@@ -155,30 +81,35 @@ body {
 
 .card__title {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .card__price {
-    font-weight: 600;
+    font-weight: 700;
+    color: #ff7a00;
+    font-size: 1.1rem;
 }
 
 .card__desc {
     margin: 0;
-    color: #555;
-    min-height: 3.5em;
+    color: #666;
+    font-size: 0.95rem;
 }
 
 .card__actions {
     display: flex;
     justify-content: flex-end;
+    margin-top: 8px;
 }
 
 .btn {
     border: 1px solid #ddd;
     background: #fff;
-    padding: 6px 10px;
+    padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 0.95rem;
 }
 
 .btn:hover {
@@ -191,15 +122,8 @@ body {
     border-color: #ff7a00;
 }
 
-.btn--danger {
-    background: #ff3b30;
-    color: #fff;
-    border: 1px solid #ff3b30;
-}
-
-.btn--ghost {
-    background: transparent;
-    border: 1px solid #ddd;
+.btn--primary:hover {
+    background: #e66d00;
 }
 
 .basket-row {
@@ -217,15 +141,20 @@ body {
     gap: 8px;
 }
 
-.basket-summary>div,
+.basket-summary > div,
 .basket-total {
     display: flex;
     justify-content: space-between;
 }
 
-.footer {
+.footer-py-3 {
+    background-color: #4a1c4a;
     text-align: center;
-    padding: 16px;
-    border-top: 1px solid #eee;
-    margin-top: 32px;
+    padding: 15px 0;
+    color: white;
+}
+
+.footer-text {
+    color: white;
+    font-size: 1.2rem;
 }
