@@ -71,7 +71,7 @@ function dishCardHTML(categoryKey, idx, item){
            src="${src}"
            alt="${item.name}"
            loading="lazy"
-           onerror="this.onerror=null;this.src='./assets/img/placeholder.jpg';"/>
+           onerror="this.onerror=null;this.src='./assets/pics/placeholder.jpg';"/>
 
       <div class="card__header">
         <h3 class="card__title">${item.name}</h3>

@@ -4,49 +4,49 @@ let myDishes = [
         "price":"12.99",
         "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
         "amount":"0",
-        "image":"./assets/img/spaghetti-carbonara.jpg"
+        "image":"./assets/pics/spaghetti-carbonara.jpg"
     },
     {
         "name":"Vegetarische Lasagne",
         "price":"9.99",
         "description":"Eine leckere Lasagne mit frischem Gemüse und Käse.",
         "amount":"0",
-        "image":"./assets/img/vegetarische-lasagne.jpg"
+        "image":"./assets/pics/vegetarische-lasagne.jpg"
     },
     {
         "name":"Hamburger",
         "price":"10.99",
         "description":"Ein saftiger Hamburger mit frischem Salat, Tomate und Zwiebel.",
         "amount":"0",
-        "image":"./assets/img/hamburger.jpg"
+        "image":"./assets/pics/hamburger.jpg"
     },
     {
         "name":"Chicken Burger",
         "price":"11.99",
         "description":"Ein würziger Chicken Burger mit knusprigem Hähnchenfilet und frischem Gemüse.",
         "amount":"0",
-        "image":"./assets/img/chicken-burger.jpg"
+        "image":"./assets/pics/chicken-burger.jpg"
     },
     {
         "name":"Margherita Pizza",
         "price":"10.99",
         "description":"Eine einfache Pizza mit Tomatensauce, frischem Mozzarella und Basilikum.",
         "amount":"0",
-        "image":"./assets/img/margherita-pizza.jpg"
+        "image":"./assets/pics/margherita-pizza.jpg"
     },
     {
         "name":"Salami Pizza",
         "price":"11.99",
         "description":"Eine herzhafte Pizza mit würziger Salami und Käse.",
         "amount":"0",
-        "image":"./assets/img/salami-pizza.jpg"
+        "image":"./assets/pics/salami-pizza.jpg"
     },
     {
         "name":"Diavola Pizza",
         "price":"12.99",
         "description":"Eine scharfe Pizza mit Peperoni und Käse.",
         "amount":"0",
-        "image":"./assets/img/diavola-pizza.jpg"
+        "image":"./assets/pics/diavola-pizza.jpg"
     }
 ];
 let myBeilages = [
