@@ -61,10 +61,9 @@ function basketSummaryHTML(subtotal, delivery, total){
     </div>
   `;
 }
-
 function dishCardHTML(categoryKey, idx, item){
   const price = asNumber(item.price);
-  const src = item.image || './assets/img/placeholder.jpg'; // Fallback, wenn kein image-Feld vorhanden
+  const src = item.image || './assets/pics/placeholder.jpg'; // Fallback EINHEITLICH in /pics
   return `
     <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
       <img class="card__img"
@@ -87,4 +86,3 @@ function dishCardHTML(categoryKey, idx, item){
     </article>
   `;
 }
-
