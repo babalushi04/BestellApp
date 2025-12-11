@@ -99,6 +99,7 @@ function normalizeLibrary(){
     list.forEach(it => {
       it.price = asNumber(it.price);   // aus String -> Number
       it.amount = asNumber(it.amount);
+      it.image = it.image || './assets/img/default.jpg';
     });
   });
 }
