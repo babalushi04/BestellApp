@@ -87,3 +87,4 @@ function dishCardHTML(categoryKey, idx, item){
     </article>
   `;
 }
+
