@@ -61,3 +61,29 @@ function basketSummaryHTML(subtotal, delivery, total){
     </div>
   `;
 }
+
+function dishCardHTML(categoryKey, idx, item){
+  const price = asNumber(item.price);
+  const src = item.image || './assets/img/placeholder.jpg'; // Fallback, wenn kein image-Feld vorhanden
+  return `
+    <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
+      <img class="card__img"
+           src="${src}"
+           alt="${item.name}"
+           loading="lazy"
+           onerror="this.onerror=null;this.src='./assets/img/placeholder.jpg';"/>
+
+      <div class="card__header">
+        <h3 class="card__title">${item.name}</h3>
+        <div class="card__price">${euro(price)}</div>
+      </div>
+
+      <p class="card__desc">${item.description}</p>
+
+      <div class="card__actions">
+        <button class="btn"
+                onclick="event.stopPropagation(); addToBasket('${categoryKey}', ${idx})">+</button>
+      </div>
+    </article>
+  `;
+}

@@ -4,49 +4,49 @@ let myDishes = [
         "price":"12.99",
         "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
         "amount":"0",
-        "image":"./img/spaghetti-carbonara.jpg"
+        "image":"./assets/img/spaghetti-carbonara.jpg"
     },
     {
         "name":"Vegetarische Lasagne",
         "price":"9.99",
         "description":"Eine leckere Lasagne mit frischem Gemüse und Käse.",
         "amount":"0",
-        "image":"./img/vegetarische-lasagne.jpg"
+        "image":"./assets/img/vegetarische-lasagne.jpg"
     },
     {
         "name":"Hamburger",
         "price":"10.99",
         "description":"Ein saftiger Hamburger mit frischem Salat, Tomate und Zwiebel.",
         "amount":"0",
-        "image":"./img/hamburger.jpg"
+        "image":"./assets/img/hamburger.jpg"
     },
     {
         "name":"Chicken Burger",
         "price":"11.99",
         "description":"Ein würziger Chicken Burger mit knusprigem Hähnchenfilet und frischem Gemüse.",
         "amount":"0",
-        "image":"./img/chicken-burger.jpg"
+        "image":"./assets/img/chicken-burger.jpg"
     },
     {
         "name":"Margherita Pizza",
         "price":"10.99",
         "description":"Eine einfache Pizza mit Tomatensauce, frischem Mozzarella und Basilikum.",
         "amount":"0",
-        "image":"./img/margherita-pizza.jpg"
+        "image":"./assets/img/margherita-pizza.jpg"
     },
     {
         "name":"Salami Pizza",
         "price":"11.99",
         "description":"Eine herzhafte Pizza mit würziger Salami und Käse.",
         "amount":"0",
-        "image":"./img/salami-pizza.jpg"
+        "image":"./assets/img/salami-pizza.jpg"
     },
     {
         "name":"Diavola Pizza",
         "price":"12.99",
         "description":"Eine scharfe Pizza mit Peperoni und Käse.",
         "amount":"0",
-        "image":"./img/diavola-pizza.jpg"
+        "image":"./assets/img/diavola-pizza.jpg"
     }
 ];
 let myBeilages = [
