@@ -1,160 +1,203 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    :root {
+        --gap: 12px;
+        --radius: 12px;
+    }
 
-body {
-    font-family: 'raleway', sans-serif;
-    line-height: 1.6;
-    color: #222;
-    margin: 0;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-.site-header {
-    position: sticky;
-    top: 0;
-    background: #4a1c4a;
-    display: flex;
-    z-index: 100;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    body {
+        margin: 0;
+        font-family: system-ui, Arial, sans-serif;
+        background: #fafafa;
+        color: #222;
+    }
 
-.logo-startseite {
-    width: 150px;
-}
+    header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 10px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+        background-color: coral;
+    }
 
-.main-wrapper {
-    display: flex;
-    min-height: 100vh;
-}
+    main {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: var(--gap);
+        max-width: 1200px;
+        margin: 16px auto;
+        padding: 0 16px;
+    }
 
-.content {
-    flex: 1;
-    padding: 20px;
-    max-width: calc(100% - 350px);
-}
+    @media (max-width: 900px) {
+        main {
+            grid-template-columns: 1fr;
+        }
+    }
 
-.basket_wrapper {
-    width: 350px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    padding: 80px 20px 20px;
-    overflow-y: auto;
-    background: #f9f9f9;
-    border-left: 1px solid #eee;
-}
+    /* Menü */
+    #menu-root {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
 
-.category {
-    margin-bottom: 40px;
-}
+    .category__title {
+        margin: 8px 0;
+    }
 
-.category__title {
-    margin: 0 0 20px;
-    font-size: 1.5rem;
-    color: #333;
-}
+    .grid {
+        display: grid;
+        gap: var(--gap);
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
 
-.card {
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 16px;
-    background: #fff;
-    margin-bottom: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+    .card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        cursor: pointer;
+    }
 
-.card__header {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    align-items: center;
-}
+    .card__header {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+    }
 
-.card__title {
-    margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
+    .card__title {
+        margin: 0;
+        font-size: 1rem;
+    }
 
-.card__price {
-    font-weight: 700;
-    color: #ff7a00;
-    font-size: 1.1rem;
-}
+    .card__price {
+        font-weight: 600;
+    }
 
-.card__desc {
-    margin: 0;
-    color: #666;
-    font-size: 0.95rem;
-}
+    .card__desc {
+        margin: 0;
+        color: #555;
+        min-height: 3.2em;
+    }
 
-.card__actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 8px;
-}
+    .card__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+    }
 
-.btn {
-    border: 1px solid #ddd;
-    background: #fff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 0.95rem;
-}
+    .btn {
+        border: 1px solid #ddd;
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
 
-.btn:hover {
-    background: #f8f8f8;
-}
+    .btn:hover {
+        background: #f5f5f5;
+    }
 
-.btn--primary {
-    background: #ff7a00;
-    color: #fff;
-    border-color: #ff7a00;
-}
+    .btn--primary {
+        background: #ff7a00;
+        color: #fff;
+        border-color: #ff7a00;
+    }
 
-.btn--primary:hover {
-    background: #e66d00;
-}
+    .btn--ghost {
+        background: transparent;
+    }
 
-.basket-row {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
+    /* Warenkorb rechts */
+    #basket {
+        position: sticky;
+        top: 72px;
+        align-self: start;
+    }
 
-.basket-summary {
-    margin-top: 16px;
-    display: grid;
-    gap: 8px;
-}
+    .basket {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: var(--radius);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-.basket-summary > div,
-.basket-total {
-    display: flex;
-    justify-content: space-between;
-}
+    .basket h2 {
+        margin: 0 0 8px;
+    }
 
-.footer-py-3 {
-    background-color: #4a1c4a;
-    text-align: center;
-    padding: 15px 0;
-    color: white;
-}
+    .basket-row {
+        display: grid;
+        grid-template-columns: 1fr auto auto auto;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
 
-.footer-text {
-    color: white;
-    font-size: 1.2rem;
-}
+    .basket-row:last-child {
+        border-bottom: none;
+    }
+
+    .basket-name {
+        font-size: 0.95rem;
+    }
+
+    .basket-controls {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .basket-qty {
+        min-width: 1.5rem;
+        text-align: center;
+    }
+
+    .basket-sum {
+        font-weight: 600;
+    }
+
+    .basket-summary {
+        display: grid;
+        gap: 6px;
+    }
+
+    .basket-summary>div {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .basket-total {
+        font-weight: 700;
+    }
+
+    .site-logo {
+        height: 52px;
+        display: flex;
+        align-items: center;    
+        justify-content: center;
+    }
+
+    .footer-Bapp {
+        margin-top: 40px;
+        padding: 20px;
+        text-align: center;
+        background-color: coral;
+        color: white;
+    }

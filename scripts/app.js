@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init(){
   normalizeLibrary();
-  renderContent();
+  renderMenu();
   renderBasket();
 }
 
 /* ========== Menü rendern ========== */
-function renderContent(){
-  const root = document.getElementById('content-wrapped');
+function renderMenu(){
+  const root = document.getElementById('menu-root');
   root.innerHTML = '';
   for(const cat of CATALOG){
     const html = categorySectionHTML(cat.title, cat.key, cat.list());
