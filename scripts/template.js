@@ -1,8 +1,8 @@
-function asNumber(v){ const n = Number(v); return Number.isFinite(n) ? n : 0; }
-function euro(n){ return n.toFixed(2).replace('.', ',') + ' €'; }
+function asNumber(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }
+function euro(n) { return n.toFixed(2).replace('.', ',') + ' €'; }
 
 // Eine Speise-Kachel
-function dishCardHTML(categoryKey, idx, item){
+function dishCardHTML(categoryKey, idx, item) {
   const price = asNumber(item.price);
   return `
     <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
@@ -19,7 +19,7 @@ function dishCardHTML(categoryKey, idx, item){
 }
 
 // Kategorie-Abschnitt
-function categorySectionHTML(title, categoryKey, list){
+function categorySectionHTML(title, categoryKey, list) {
   const items = list.map((it, i) => dishCardHTML(categoryKey, i, it)).join('');
   return `
     <section class="category">
@@ -30,7 +30,7 @@ function categorySectionHTML(title, categoryKey, list){
 }
 
 // Warenkorb-Zeile
-function basketRowHTML(item){
+function basketRowHTML(item) {
   return `
     <div class="basket-row">
       <div class="basket-name">${item.name}</div>
@@ -45,32 +45,32 @@ function basketRowHTML(item){
   `;
 }
 
-function basketListHTML(items){
-  if(!items.length) return `<p>Dein Warenkorb ist leer.</p>`;
+function basketListHTML(items) {
+  if (!items.length) return `<p>Dein Warenkorb ist leer.</p>`;
   return items.map(basketRowHTML).join('');
 }
 
-function basketSummaryHTML(subtotal, delivery, total){
+function basketSummaryHTML(subtotal, delivery, total) {
   return `
     <div class="basket-summary">
       <div><span>Zwischensumme</span><span>${euro(subtotal)}</span></div>
       <div><span>Lieferung</span><span>${euro(delivery)}</span></div>
       <hr/>
       <div class="basket-total"><span>Gesamt</span><span>${euro(total)}</span></div>
-      <button class="btn btn--primary" ${total===0?'disabled':''}>Zur Kasse</button>
+      <button class="btn btn--primary" ${total === 0 ? 'disabled' : ''}>Zur Kasse</button>
     </div>
   `;
 }
-function dishCardHTML(categoryKey, idx, item){
+function dishCardHTML(categoryKey, idx, item) {
   const price = asNumber(item.price);
-  const src = item.image || './assets/pics/placeholder.jpg'; // Fallback EINHEITLICH in /pics
+  const src = item.image || './assets/pics/placeholder.jpg';   // Fallback EINHEITLICH in /pics
   return `
     <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
       <img class="card__img"
            src="${src}"
            alt="${item.name}"
            loading="lazy"
-           onerror="this.onerror=null;this.src='./assets/pics/placeholder.jpg';"/>
+            onerror="this.onerror=null;this.src='./assets/pics/placeholder.jpg';"/> 
 
       <div class="card__header">
         <h3 class="card__title">${item.name}</h3>
