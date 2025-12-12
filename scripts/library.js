@@ -88,6 +88,13 @@ let myBeilages = [
 ];
 let myDrinks = [
     {
+        "name":"Bier von Fass",
+        "price":"6.00",
+        "description":"Ein frisch gezapftes Bier vom Fass.",
+        "amount":"0",
+        "image":"./assets/pics/drinks/bier-von-fass.jpg"
+    },
+    {
         "name":"Cola",
         "price":"2.50",
         "description":"Erfrischendes Cola-Getränk.",
