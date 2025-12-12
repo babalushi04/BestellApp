@@ -72,7 +72,7 @@ let myBeilages = [
         "image":"./assets/pics/beilagen/pommes-frites.jpg"
     },
     {
-        "name":"Knoblauchbrot mit Tomaten",
+        "name":"Knoblauchbrot",
         "price":"4.00",
         "description":"Frisches Knoblauchbrot, perfekt als Beilage.",
         "amount":"0",
