@@ -57,7 +57,7 @@ function basketSummaryHTML(subtotal, delivery, total) {
       <div><span>Lieferung</span><span>${euro(delivery)}</span></div>
       <hr/>
       <div class="basket-total"><span>Gesamt</span><span>${euro(total)}</span></div>
-      <button class="btn btn--primary" ${total === 0 ? 'disabled' : ''}>Zur Kasse</button>
+      <button class="btn btn--primary" ${total === 0 ? 'disabled' : ''} onclick="checkout()">Zur Kasse</button>
     </div>
   `;
 }
@@ -86,3 +86,6 @@ function dishCardHTML(categoryKey, idx, item) {
     </article>
   `;
 }
+
+
+
