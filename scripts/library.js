@@ -28,21 +28,21 @@ let myDishes = [
         "image":"./assets/pics/gerichte/chicken-burger.jpg"
     },
     {
-        "name":"Margherita Pizza",
+        "name":"Pizza Margherita",
         "price":"10.99",
         "description":"Eine einfache Pizza mit Tomatensauce, frischem Mozzarella und Basilikum.",
         "amount":"0",
         "image":"./assets/pics/gerichte/margherita-pizza.jpg"
     },
     {
-        "name":"Salami Pizza",
+        "name":"Pizza Salami ",
         "price":"11.99",
         "description":"Eine herzhafte Pizza mit würziger Salami und Käse.",
         "amount":"0",
         "image":"./assets/pics/gerichte/salami-pizza.jpg"
     },
     {
-        "name":"Diavola Pizza",
+        "name":"Pizza Diavola ",
         "price":"12.99",
         "description":"Eine scharfe Pizza mit Peperoni und Käse.",
         "amount":"0",
