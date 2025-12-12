@@ -109,7 +109,7 @@ function checkout() {
   const items = Object.values(loadBasket());
   if (!items.length) return; // nichts zu tun
 
-  alert('Bezahlt! Ihre Bestellung ist auf dem Weg.');
+  alert('Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚');
 
   // Warenkorb leeren (persistiert):
   // Variante A (empfohlen, konsistent mit loadBasket/saveBasket)
