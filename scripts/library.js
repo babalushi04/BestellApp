@@ -88,6 +88,13 @@ let myBeilages = [
 ];
 let myDrinks = [
     {
+        "name":"Wein Rot",
+        "price":"5.00",
+        "description":"Ein vollmundiger roter Wein.",
+        "amount":"0",
+        "image":"./assets/pics/drinks/wein-rot.jpg"
+    },
+    {
         "name":"Bier von Fass",
         "price":"6.00",
         "description":"Ein frisch gezapftes Bier vom Fass.",
