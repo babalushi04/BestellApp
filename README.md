@@ -6,7 +6,7 @@ Bestell App ist das 5 Projekt meiner Weiterbildung zum Fronted Developer.
 
 - **HTML5** – Semantische Struktur mit `<dialog>`, `<header>`, `<main> `, `<footer>`, `<section>`
 - **CSS3** – Custom Properties, Flexbox/Grid, responsive Design
-- **JavaScript** – Keine Frameworks, nur natives DOM-API
+- **JavaScript** 
 - **Raleway Font** – Lokal eingebundene Schriftart
 
 Bestell App/
