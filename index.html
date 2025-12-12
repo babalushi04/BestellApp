@@ -25,8 +25,14 @@
   </main>
   <footer class="footer-Bapp" style="text-align:center; padding:12px; border-top:1px solid #eee;">
    <a>© 2025 Bestell App</a> | <a href="./impressum/impressum.html">Impressum</a> | <a href="./privacy/datenschutz.html">Datenschutz</a>
-
   </footer>
+  <dialog id="checkoutDialog" class="modal" aria-labelledby="checkoutTitle" aria-describedby="checkoutMessage">
+  <h3 id="checkoutTitle">Bestellung unterwegs</h3>
+  <p id="checkoutMessage">Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚</p>
+  <div class="modal-actions">
+    <button class="btn btn--primary" id="checkoutOkBtn">Okay</button>
+  </div>
+</dialog>
 </body>
   <script src="./scripts/library.js" defer></script>
   <script src="./scripts/template.js" defer></script>
