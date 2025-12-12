@@ -12,7 +12,7 @@
         font-family: system-ui, Arial, sans-serif;
         background: #fafafa;
         color: #222;
-    }
+
 
     header {
         position: sticky;
@@ -25,6 +25,12 @@
         align-items: center;
         z-index: 10;
         background-color: coral;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
     }
 
     main {
@@ -208,4 +214,5 @@
         object-fit: cover;
         border-radius: 10px;
         display: block;
+    }
     }

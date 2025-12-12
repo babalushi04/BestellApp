@@ -11,16 +11,24 @@
 </head>
 <body>
   <header>
-    <div class="site-logo" href="./index.html" aria-label="Startseite">
-      <img class="logo-header" href="./index.html" src="./assets/pics/Logo.png" alt="Bestell App Logo" height="40">
-    </div>
-    </header>
+    <nav class="nav-header" aria-label="Hauptnavigation">
+      <a class="site-logo" href="./index.html" aria-label="Startseite">
+        <img class="logo-header" src="./assets/pics/Logo.png" alt="Bestell App Logo" height="40">
+      </a>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="./index.html">Menü</a></li>
+        <li><a class="nav-link" href="./about.html">Über uns</a></li>
+        <li><a class="nav-link" href="./contact.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
   <main>
     <section id="menu-root" aria-live="polite"></section>
     <aside id="basket" aria-label="Warenkorb" aria-live="polite"></aside>
   </main>
   <footer class="footer-Bapp" style="text-align:center; padding:12px; border-top:1px solid #eee;">
-    © 2025 Bestell App
+   <a>© 2025 Bestell App</a> | <a href="./imprint.html">Impressum</a> | <a href="./privacy.html">Datenschutz</a>
+
   </footer>
 </body>
   <script src="./scripts/library.js" defer></script>
