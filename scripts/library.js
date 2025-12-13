@@ -8,6 +8,13 @@ let myDishes = [
         "image":"./assets/pics/gerichte/spaghetti-bolognese.jpg"
     },
     {
+        "name":"Fettuccine Alfredo",
+        "price":"12.50",
+        "description":"Cremige Fettuccine-Nudeln in einer reichhaltigen Alfredo-Sauce aus Butter, Sahne und Parmesan.",
+        "amount":"0",
+        "image":"./assets/pics/gerichte/fettuccine-alfredo.jpg"
+    },
+    {
         "name":"Spaghetti Carbonara",
         "price":"12.99",
         "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
