@@ -236,3 +236,21 @@ body {
         display: block;
     }
 }
+
+@media (max-width: 600px) {
+    main.layout {
+        grid-template-columns: 1fr;
+        /* eine Spalte */
+        gap: 12px;
+    }
+
+    /* Basket unter das Menü */
+    #basket {
+        grid-column: 1;
+        /* gleiche Spalte wie Menü */
+        /* Sticky aus */
+        top: auto;
+        margin-top: 8px;
+        /* etwas Luft nach dem Menü */
+    }
+}

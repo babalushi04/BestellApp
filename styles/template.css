@@ -54,7 +54,7 @@ main {
 main.layout {
     display: grid;
     grid-template-columns: 1fr 320px;
-    /* links Menü, rechts Basket */
+    /* Menü | Basket */
     gap: 12px;
     max-width: 1200px;
     margin: 16px auto;
