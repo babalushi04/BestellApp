@@ -1,4 +1,12 @@
 let myDishes = [
+    
+    {
+        "name":"Spaghetti Bolognese",
+        "price":"11.50",
+        "description":"Ein klassisches italienisches Nudelgericht mit einer herzhaften Fleischsauce.",
+        "amount":"0",
+        "image":"./assets/pics/gerichte/spaghetti-bolognese.jpg"
+    },
     {
         "name":"Spaghetti Carbonara",
         "price":"12.99",
