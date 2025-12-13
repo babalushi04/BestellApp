@@ -69,6 +69,20 @@ let myDishes = [
         "description":"Eine leckere Pizza mit Schinken und Käse.",
         "amount":"0",
         "image":"./assets/pics/gerichte/pizza-prosciutto.jpg"
+    },
+    {
+        "name":"Wiener Schnitzel",
+        "price":"13.50",
+        "description":"Ein klassisches Wiener Schnitzel aus zartem Kalbfleisch, paniert und goldbraun gebraten.",
+        "amount":"0",
+        "image":"./assets/pics/gerichte/wiener-schnitzel.jpg"
+    },
+    {
+        "name":"Rindersteak",
+        "price":"18.00",
+        "description":"Ein saftiges Rindersteak, perfekt gegrillt und serviert mit einer Auswahl an Beilagen.",
+        "amount":"0",
+        "image":"./assets/pics/gerichte/rindersteak.jpg"
     }
 ];
 let myBeilages = [
@@ -78,6 +92,20 @@ let myBeilages = [
         "description":"Knusprige Pommes Frites, perfekt als Beilage.",
         "amount":"0",
         "image":"./assets/pics/beilagen/pommes-frites.jpg"
+    },
+    {
+        "name":"Onion Rings",
+        "price":"3.50",
+        "description":"Knusprige Zwiebelringe, perfekt als Beilage.",
+        "amount":"0",
+        "image":"./assets/pics/beilagen/onion-rings.jpg"
+    },
+    {
+        "name":"Kartoffelsalat",
+        "price":"3.00",
+        "description":"Ein traditioneller deutscher Kartoffelsalat.",
+        "amount":"0",
+        "image":"./assets/pics/beilagen/kartoffelsalat.jpg"
     },
     {
         "name":"Knoblauchbrot",
