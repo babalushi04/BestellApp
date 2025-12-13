@@ -7,11 +7,10 @@ html {
 main {
     display: grid;
     grid-template-columns: 1fr 320px;
-    /* links Menü, rechts Warenkorb */
     gap: 12px;
 }
 
-/* WICHTIG: Spalten explizit setzen */
+
 .hero,
 #menu-root {
     grid-column: 1;
@@ -20,39 +19,59 @@ main {
 #basket {
     grid-column: 2;
     position: sticky;
-    top: 72px;
+    top: calc(var(--header-h) + 8px);
+    margin-top: 0;
+    align-self: start;
+
 }
+
 
 /* Hero-Styling – gleiche Breite wie dishes (linke Spalte), moderate Höhe */
 .hero {
-    --hero-h: 160px;
-    /* Höhe anpassbar (140–180px empfohlen) */
-    height: var(--hero-h);
-    border-radius: 16px;
-    background: linear-gradient(135deg, #ff7a00, #ff9f43);
-    color: #fff;
+    width: 100%;
+    min-height: 90vh;
     display: grid;
     place-items: center;
     text-align: center;
-    padding: 12px;
-}
-
-.hero__content {
-    max-width: 900px;
-    padding: 0 12px;
-}
-
-.hero h1 {
-    margin: 0 0 6px;
-    font-size: clamp(20px, 3.2vw, 28px);
-}
-
-.hero p {
-    margin: 0 0 12px;
-    opacity: .95;
+    color: #fff;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff7a00, #ff9f43);
 }
 
 .hero--img {
-    background: linear-gradient(to right, rgba(255, 122, 0, .85), rgba(255, 122, 0, .55)),
-        url('./assets/pics/hero.jpg') center/cover no-repeat;
+    background-image: url(../assets/pics/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero__content {
+    max-width: 1200px;
+}
+
+/* Zweispalten-Layout für Menü + Warenkorb */
+main.layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    /* links Menü, rechts Basket */
+    gap: 12px;
+    max-width: 1200px;
+    margin: 16px auto;
+    padding: 0 16px;
+}
+
+#menu-root {
+    grid-column: 1;
+}
+
+#basket {
+    grid-column: 2;
+    position: sticky;
+    top: calc(var(--header-h) + 8px);
+    align-self: start;
+}
+
+.category {
+    scroll-margin-top: calc(var(--header-h) + 16px);
 }
