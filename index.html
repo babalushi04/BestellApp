@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bestell App</title>
   <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./styles/basket.css">
   <link rel="stylesheet" href="./styles/template.css">
   <link rel="stylesheet" href="./impressum.css">
   <link rel="stylesheet" href="./datenschutz.css">
   <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
   <header>
     <nav class="nav-header" aria-label="Hauptnavigation">
@@ -20,23 +21,32 @@
     </nav>
   </header>
   <main>
+   <section class="hero hero--img" aria-label="Willkommen">
+      <div class="hero__content">
+        <h1>Gleich loslegen</h1>
+        <p>Frisch, schnell, lecker – bestell deine Lieblingsgerichte.</p>
+        <a class="btn btn--primary hero__cta" href="#dishes">Zu den Hauptgerichten</a>
+      </div>
+    </section>
     <section id="menu-root" aria-live="polite"></section>
     <aside id="basket" aria-label="Warenkorb" aria-live="polite"></aside>
   </main>
   <footer class="footer-Bapp" style="text-align:center; padding:12px; border-top:1px solid #eee;">
-   <a>© 2025 Bestell App</a> | <a href="./impressum/impressum.html">Impressum</a> | <a href="./privacy/datenschutz.html">Datenschutz</a>
+    <a>© 2025 Bestell App</a> | <a href="./impressum/impressum.html">Impressum</a> | <a
+      href="./privacy/datenschutz.html">Datenschutz</a>
   </footer>
   <dialog id="checkoutDialog" class="modal" aria-labelledby="checkoutTitle" aria-describedby="checkoutMessage">
-  <h3 id="checkoutTitle">Bestellung unterwegs</h3>
-  <p id="checkoutMessage">Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚</p>
-  <div class="modal-actions">
-    <button class="btn btn--primary" id="checkoutOkBtn">Okay</button>
-  </div>
-</dialog>
+    <h3 id="checkoutTitle">Bestellung unterwegs</h3>
+    <p id="checkoutMessage">Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚</p>
+    <div class="modal-actions">
+      <button class="btn btn--primary" id="checkoutOkBtn">Okay</button>
+    </div>
+  </dialog>
 </body>
-  <script src="./scripts/library.js" defer></script>
-  <script src="./scripts/template.js" defer></script>
-  <script src="./scripts/app.js" defer></script>
-  <script src="./scripts/basket.js" defer></script>
-  <script src="./script.js" defer></script>
+<script src="./scripts/library.js" defer></script>
+<script src="./scripts/template.js" defer></script>
+<script src="./scripts/app.js" defer></script>
+<script src="./scripts/basket.js" defer></script>
+<script src="./script.js" defer></script>
+
 </html>

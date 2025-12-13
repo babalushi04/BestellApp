@@ -1,0 +1,58 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* weiches Scrollen für den Button */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    /* links Menü, rechts Warenkorb */
+    gap: 12px;
+}
+
+/* WICHTIG: Spalten explizit setzen */
+.hero,
+#menu-root {
+    grid-column: 1;
+}
+
+#basket {
+    grid-column: 2;
+    position: sticky;
+    top: 72px;
+}
+
+/* Hero-Styling – gleiche Breite wie dishes (linke Spalte), moderate Höhe */
+.hero {
+    --hero-h: 160px;
+    /* Höhe anpassbar (140–180px empfohlen) */
+    height: var(--hero-h);
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ff7a00, #ff9f43);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 12px;
+}
+
+.hero__content {
+    max-width: 900px;
+    padding: 0 12px;
+}
+
+.hero h1 {
+    margin: 0 0 6px;
+    font-size: clamp(20px, 3.2vw, 28px);
+}
+
+.hero p {
+    margin: 0 0 12px;
+    opacity: .95;
+}
+
+.hero--img {
+    background: linear-gradient(to right, rgba(255, 122, 0, .85), rgba(255, 122, 0, .55)),
+        url('./assets/pics/hero.jpg') center/cover no-repeat;
+}

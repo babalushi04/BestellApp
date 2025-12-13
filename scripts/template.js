@@ -87,5 +87,16 @@ function dishCardHTML(categoryKey, idx, item) {
   `;
 }
 
+function categorySectionHTML(title, categoryKey, list) {
+  const items = list.map((it, i) => dishCardHTML(categoryKey, i, it)).join('');
+  return `
+    <section class="category" id="${categoryKey}">
+      <h2 class="category__title">${title}</h2>
+      <div class="grid">${items}</div>
+    </section>
+  `;
+}
+
+
 
 
