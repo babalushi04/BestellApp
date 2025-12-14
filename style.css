@@ -33,15 +33,6 @@ body {
         align-items: center;
     }
 
-    main {
-        display: grid;
-        grid-template-columns: 1fr 320px;
-        gap: var(--gap);
-        max-width: 1200px;
-        margin: 16px auto;
-        padding: 0 16px;
-    }
-
     .modal {
         border: none;
         border-radius: 12px;
@@ -244,13 +235,20 @@ body {
         gap: 12px;
     }
 
-    /* Basket unter das Menü */
     #basket {
         grid-column: 1;
-        /* gleiche Spalte wie Menü */
-        /* Sticky aus */
+        /* unter dem Menü */
+        position: static;
+        /* sticky aus */
         top: auto;
-        margin-top: 8px;
-        /* etwas Luft nach dem Menü */
+        margin-top: 12px;
+        /* Luft nach den Gerichten */
     }
+
+    /* Hero nicht zu groß auf kleinen Screens */
+    .hero {
+        min-height: 48vh;
+    }
+
+    /* statt 90vh */
 }
