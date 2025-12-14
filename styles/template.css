@@ -1,19 +1,15 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--header-h) + 12px);
-}
-
-.category {
-    scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 /* weiches Scrollen für den Button */
 
-.main {
+main {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 12px;
 }
+
 
 .hero,
 #menu-root {
@@ -29,18 +25,11 @@ html {
 
 }
 
-#basket,
-.basket {
-    max-width: 100%;
-    overflow-wrap: anywhere;
-}
-
-
 
 /* Hero-Styling – gleiche Breite wie dishes (linke Spalte), moderate Höhe */
 .hero {
     width: 100%;
-    min-height: 90vh;
+    height: 90vh;
     display: grid;
     place-items: center;
     text-align: center;
@@ -65,7 +54,7 @@ html {
 main.layout {
     display: grid;
     grid-template-columns: 1fr 320px;
-    /* Menü | Basket */
+    /* links Menü, rechts Basket */
     gap: 12px;
     max-width: 1200px;
     margin: 16px auto;
