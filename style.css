@@ -1,6 +1,13 @@
 :root {
-    --header-h: 64px;
-    /* echte Header-Höhe eintragen */
+    --header-h: 56px;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url("/fonts/raleway/Raleway-Italic-VariableFont_wght.ttf");
+    font-family: Raleway;
+    font-weight: bold;
+    src: url("/fonts/raleway/Raleway-VariableFont_wght.ttf");
 }
 
 * {
