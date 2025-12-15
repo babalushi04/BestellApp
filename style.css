@@ -12,6 +12,8 @@ body {
     font-family: system-ui, Arial, sans-serif;
     background: #fafafa;
     color: #222;
+    max-width: 1920px;
+    margin: 0 auto;
 
 
     header {
@@ -246,11 +248,30 @@ body {
 
     /* Basket unter das Menü */
     #basket {
+        position: static;
+        /* Sticky komplett deaktivieren */
         grid-column: 1;
         /* gleiche Spalte wie Menü */
-        /* Sticky aus */
-        top: auto;
-        margin-top: 8px;
-        /* etwas Luft nach dem Menü */
+        margin-top: 16px;
+        /* Abstand nach dem Menü */
+        width: 100%;
+        /* Volle Breite nutzen */
+    }
+
+    .basket {
+        max-width: 100%;
+        /* Container nicht überschreiten */
+    }
+
+    .basket-row {
+        font-size: 0.9rem;
+        /* Kleinere Schrift auf mobil */
+        gap: 4px;
+    }
+
+    .basket-controls button {
+        padding: 4px 8px;
+        /* Kleinere Buttons */
+        font-size: 0.85rem;
     }
 }
