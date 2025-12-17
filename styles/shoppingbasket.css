@@ -180,30 +180,33 @@
 }
 
 @media (max-width: 680px) {
-  .basket_wrapper {
-    display: none;
-  }
+    .basket_wrapper {
+        display: none;
+    }
 
-  .basket_wrapper.visible {
-    display: block;
-    position: fixed;
-    bottom: 50px; /* Platz für schwarzen Button */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 95%; /* oder 100% mit max-width */
-    max-width: 365px;
-    max-height: 50vh;
-    overflow-y: auto;
-    background-color: var(--farbe-shoppingBAsket);
-    z-index: 9999;
-    padding: 10px;
-    box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
-    border-top: 2px solid #000;
-    border-radius: 10px 10px 0 0; /* optional: runde Ecken oben */
-    margin-top: auto;
-  }
+    .basket_wrapper.visible {
+        display: block;
+        position: fixed;
+        bottom: 50px;
+        /* Platz für schwarzen Button */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        /* oder 100% mit max-width */
+        max-width: 365px;
+        max-height: 50vh;
+        overflow-y: auto;
+        background-color: var(--farbe-shoppingBAsket);
+        z-index: 9999;
+        padding: 10px;
+        box-shadow: 0 -3px 8px rgba(0, 0, 0, 0.1);
+        border-top: 2px solid #000;
+        border-radius: 10px 10px 0 0;
+        /* optional: runde Ecken oben */
+        margin-top: auto;
+    }
 
-  .basket_toggle_btn {
-    display: block;
-  }
+    .basket_toggle_btn {
+        display: block;
+    }
 }
