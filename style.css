@@ -181,7 +181,7 @@ h1 {
 }
 
 .bg_img {
-    width: 100%;
+    width: 1440px;
     height: 100vh;
     background-image: url(./assets/pics/hero.jpg);
     background-size: cover;
