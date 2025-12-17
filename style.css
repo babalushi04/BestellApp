@@ -1,209 +1,282 @@
-#main_content {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+:root {
+    --header-h: 64px;
+    /* echte Header-Höhe eintragen */
 }
 
-.wrapper_container {
-    max-width: 1960px;
-    margin: auto
+* {
+    box-sizing: border-box;
 }
 
-h1 {
-    background-color: bisque;
+html {
+    scroll-behavior: smooth;
 }
 
-.basket_article_container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row-reverse;
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: #fafafa;
+    color: #222;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
-.header_content {
-    background-color: var(--farbe-hintergrund);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 16px 32px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    height: 93px;
+
+header {
+    position: sticky;
     top: 0;
-
-    z-index: 2000;
-    /*  first level line  */
-}
-
-
-.logo_img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-}
-
-.navi {
-    width: 100%;
-    min-height: 80px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 16px;
     display: flex;
-    margin-right: 44px;
-    align-items: center;
-    justify-content: flex-end;
-
-    color: white;
-}
-
-.navi ul {
-    display: flex;
-}
-
-.navi ul li {
-    height: 100%;
-    padding: 30px;
-}
-
-
-.navi ul li a {
-    color: white;
-    padding: 10px;
-    background-color: orange;
-    border-radius: 10px;
-    border: 3px solid white;
-    color: rgb(43, 42, 42);
-    transition: all 150ms ease-in;
-}
-
-.navi ul li a:hover {
-    background-color: rgba(255, 166, 0, 0.476);
-    border: 3px solid rgba(230, 159, 17, 0.394);
-}
-
-
-
-.toggle_button {
-    margin-bottom: 40px;
-    display: none;
-    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 30px;
-    height: 22px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 3000;
+    z-index: 10;
+    background-color: coral;
 }
 
-.toggle_button .bar {
-    height: 4px;
-    width: 100%;
-    background-color: rgb(203, 141, 15);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-
-@media(max-width:850px) {
-    .toggle_button {
-        display: flex;
-    }
-
-    .navi {
-        flex-direction: column;
-        align-items: center;
-        /* zentriert das Logo und den Button */
-        padding-top: 20px;
-    }
-
-    .navi ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-    }
-
-
-    .list_container {
-        background-color: grey;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        /* ✅ zentriert die Menüeinträge */
-        justify-content: center;
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px 0;
-        position: absolute;
-        top: 93px;
-        /* Höhe deines festen Headers */
-        left: 43%;
-        transform: translateX(-50%);
-        background-color: var(--farbe-hintergrund);
-        z-index: 1500;
-        /* liegt über dem Content, unter dem Header */
-        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .list_container ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .list_container.active {
-        display: flex;
-    }
-
-    .list_container li {
-
-        text-align: center;
-        width: 100%;
-    }
-}
-
-.login_box {
-    margin-right: 30px;
-}
-
-.title_dishes {
+nav {
     display: flex;
-    justify-content: center;
+    gap: 20px;
     align-items: center;
-    padding: 10px 10px;
 }
 
-.bg_img {
-    width: 1440px;
-    height: 100vh;
-    background-image: url(./assets/pics/hero.jpg);
-    background-size: cover;
-    background-position: center;
-    /* Zeigt die obere Hälfte */
-    background-repeat: no-repeat;
-    margin-top: 6%;
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--gap);
+    max-width: 1200px;
+    margin: 16px auto;
+    padding: 0 16px;
+}
+
+.modal {
+    border: none;
+    border-radius: 12px;
+    padding: 16px 16px 12px;
+    width: min(90vw, 420px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, .4);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
 }
 
 
-footer {
-    display: var();
-    background-color: var(--farbe-hintergrund);
-    height: 74px;
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Menü */
+#menu-root {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.category__title {
+    margin: 8px 0;
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+}
+
+.card__title {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.card__price {
+    font-weight: 600;
+}
+
+.card__desc {
+    margin: 0;
+    color: #555;
+    min-height: 3.2em;
+}
+
+.card__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.btn {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #f5f5f5;
+}
+
+.btn--primary {
+    background: #ff7a00;
+    color: #fff;
+    border-color: #ff7a00;
+}
+
+.btn--ghost {
+    background: transparent;
+}
+
+/* Warenkorb rechts */
+#basket {
+    position: sticky;
+    top: 72px;
+    align-self: start;
+}
+
+.basket {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.basket h2 {
+    margin: 0 0 8px;
+}
+
+.basket-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.basket-row:last-child {
+    border-bottom: none;
+}
+
+.basket-name {
+    font-size: 0.95rem;
+}
+
+.basket-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.basket-qty {
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.basket-sum {
+    font-weight: 600;
+}
+
+.basket-summary {
+    display: grid;
+    gap: 6px;
+}
+
+.basket-summary>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket-total {
+    font-weight: 700;
+}
+
+.site-logo {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-Bapp {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: coral;
+    color: white;
+}
+
+.card__img {
     width: 100%;
-
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
 }
+  
 
-.logo_img_footer {
+@media (max-width: 600px) {
+    main.layout {
+        grid-template-columns: 1fr;
+        /* eine Spalte */
+        gap: 12px;
+    }
 
-    max-width: 140px;
-    width: 100%;
-    height: auto;
+    /* Basket unter das Menü */
+    #basket {
+        position: static;
+        /* Sticky komplett deaktivieren */
+        grid-column: 1;
+        /* gleiche Spalte wie Menü */
+        margin-top: 16px;
+        /* Abstand nach dem Menü */
+        width: 100%;
+        /* Volle Breite nutzen */
+    }
 
+    .basket {
+        max-width: 100%;
+        /* Container nicht überschreiten */
+    }
+
+    .basket-row {
+        font-size: 0.9rem;
+        /* Kleinere Schrift auf mobil */
+        gap: 4px;
+    }
+
+    .basket-controls button {
+        padding: 4px 8px;
+        /* Kleinere Buttons */
+        font-size: 0.85rem;
+    }
 }

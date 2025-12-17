@@ -2,109 +2,52 @@
 <html lang="de">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BestellApp</title>
-  <link rel="stylesheet" href="./styles/articlecontainer.css">
-  <link rel="stylesheet" href="./styles/fonts.css">
-  <link rel="stylesheet" href="./styles/assets.css">
-  <link rel="stylesheet" href="./styles/basket.css">
-  <link rel="stylesheet" href="./styles/template.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bestell App</title>
   <link rel="stylesheet" href="./style.css">
-  <link rel="icon" type="image/png" href="./assets/favicon/favicon-32x32.png" sizes="32x32">
- 
+  <link rel="stylesheet" href="./styles/template.css">
+  <link rel="stylesheet" href="./impressum.css">
+  <link rel="stylesheet" href="./datenschutz.css">
+  <link rel="icon" href="./assets/favicon/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-
-  <header id="header" class="header_content">
-
-    <img class="logo_img" src="./assets/pics/Logo.png" alt="Logo Tofurosa">
-
-    <nav class="navi">
-      <button type="button" class="toggle_button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
-      <div class="list_container" id="list_cont">
-        <ul>
-          <li><a href="#menue_jumping">Menü</a></li>
-          <li><a href="#drinks_jump">Drinks</a></li>
-          <li><a href="#beilage_jumping">Supplements</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-      </div>
+  <header>
+    <nav class="nav-header" aria-label="Hauptnavigation">
+      <a class="site-logo" href="./index.html" aria-label="Startseite">
+        <img class="logo-header" src="./assets/pics/Logo.png" alt="Bestell App Logo" height="40">
+      </a>
     </nav>
   </header>
-  <div class="wrapper_container">
-    <div id="main_content">
-      <section class="bg_img"></section>
-
-      <div class="basket_article_container">
-        <div class="basket_wrapper">
-          <div class="basket">
-            <div id="pick_up_infos" class="pick_up">
-              <div class="adress">
-                <h2 class="pick_up_text">PICK UP AT </h2>
-                <a href="" class="town">Courfaivre</a>
-                <p><a href="2853 Courfaivre"><img src="./assets/icons/pick.svg" alt="Pick up Icon"></a></p>
-              </div>
-              <div id="map_box" class="map_box_style"><iframe title="map" class="map-box-style"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=7.284%2C47.325%2C7.304%2C47.335&layer=mapnik&marker=47.330%2C7.294"
-                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                </iframe>
-              </div>
-            </div>
-
-            <div class="basket_name">
-              <h3 class="h3_title">Your Order:</h3>
-            </div>
-            <div id="render_basket_shop"></div>
-            <div class="pick_or_delivery">
-              <button onclick="setDelivery('delivery')" id="btn_pick_up" class="btn">Delivery</button>
-              <button onclick="setDelivery('pickup')" id="btn_devlivery" class="btn">Pickup</button>
-            </div>
-
-            <!-- Basket Render-->
-            <div id="img_price_amount_items"></div>
-          </div>
-
-        </div>
-        <div class="article_basket_box" id="menue_jumping">
-          <h1 class="title_dishes">Menu</h1>
-          <section id="article_container_all" class="arcticle_container_style_all"></section>
-
-          <div class="seperateur" id="drinks_jump"></div>
-          <h1 class="title_dishes">Drinks</h1>
-          <section id="drink_container_all" class="drink_container_style_all"></section>
-
-
-          <div class="seperateur" id="beilage_jumping"></div>
-          <h1 class="title_dishes">Supplements</h1>
-          <section id="beilage_container_all" class="beilage_container_style_all"></section>
-          <div class="seperateur"></div>
-        </div>
-      </div>
-    </div>
+  <section class="hero hero--img" aria-label="Willkommen">
+  <div class="hero__content">
+    <h1>Frisch, schnell, lecker.</h1>
+    <p>Bestell deine Lieblingsgerichte – direkt aus unserer Küche.</p>
+    <a class="btn btn--primary" href="#dishes">Zu den Hauptgerichten</a>
   </div>
-  <button id="toggleBasketBtn" class="basket_toggle_btn">SHOW SHOPPING CART</button>
-
-  <!--   <footer class="standard_display_gap">
-      <img class="logo_img_footer" src="./assets/img/logo.png" alt="Logo Tofurosa">
-      <ul class="standard_display_gap">
-        <li><a href="">Impressum</a></li>
-        <li><a href="">Fan Shop</a></li>
-        <li><a href="">Partners</a></li>
-      </ul>
+</section>
+  <main class="main-layout">
+    </section>
+    <section id="menu-root" aria-live="polite"></section>
+    <aside id="basket" aria-label="Warenkorb" aria-live="polite"></aside>
+  </main>
+  <footer class="footer-Bapp" style="text-align:center; padding:12px; border-top:1px solid #eee;">
+    <a>© 2025 Bestell App</a> | <a href="./impressum/impressum.html">Impressum</a> | <a
+      href="./privacy/datenschutz.html">Datenschutz</a>
   </footer>
- -->
-
+  <dialog id="checkoutDialog" class="modal" aria-labelledby="checkoutTitle" aria-describedby="checkoutMessage">
+    <h3 id="checkoutTitle">Bestellung unterwegs</h3>
+    <p id="checkoutMessage">Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚</p>
+    <div class="modal-actions">
+      <button class="btn btn--primary" id="checkoutOkBtn">Okay</button>
+    </div>
+  </dialog>
 </body>
-<script src="./scripts/render.js"></script>
-<script src="./scripts/datenbank.js"></script>
-<script src="./scripts/template.js"></script>
-<script src="./scripts/toggle.js"></script>
-<script src="./script.js"></script>
+<script src="./scripts/library.js" defer></script>
+<script src="./scripts/template.js" defer></script>
+<script src="./scripts/app.js" defer></script>
+<script src="./scripts/basket.js" defer></script>
+<script src="./script.js" defer></script>
+
 </html>
