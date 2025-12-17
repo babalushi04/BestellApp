@@ -1,0 +1,46 @@
+
+.btn_counter,
+.btn_counter_remove {
+    position: absolute;
+    top: 211px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.btn_counter_commande {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.btn_counter_remove {
+    top: 211px;
+    right: 216px;
+}
+
+.btn_counter:hover,
+.btn_counter_remove:hover,
+.btn_counter_commande:hover {
+
+    background-color: #ffaa33;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.btn_counter_img,
+.icon_commade_btn {
+    width: 22px;
+    height: 25px;
+}

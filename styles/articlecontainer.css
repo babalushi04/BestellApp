@@ -1,0 +1,52 @@
+.article_basket_box {
+    position: sticky;
+    top: 125px;
+    width: calc(100% - 300px);
+}
+
+.arcticle_container_style_all, .drink_container_style_all, .beilage_container_style_all{
+    top: 125px; 
+    width: 100%;
+    max-width: 1960px;
+    height: auto;
+    background-color: var(--farbe-hintergrund);
+    display: flex;
+    justify-content: space-around;  
+    flex-wrap: wrap;
+    align-items: flex-start;    
+    gap: 10px;
+}
+
+.container_article, .drinks_container, .beilage_container {
+background-color: rgba(128, 128, 128, 0.247);
+width: 250px;
+height: 360px;
+border-radius: 5px;
+}
+
+.article_img_box, .drinks_img_box, .beilage_img_box {
+    position: relative;
+    width: 250px;
+    height: 300px;
+}
+
+.img_article, .img_drink, .img_beilage {
+    object-fit: cover;
+display: block;
+width: 250px;
+height: 250px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.name_style_article,
+.article_price_style, .drink_price_style, .name_style_drink, .name_style_beilage, .beilage_price_style {
+    margin-top: 5px;
+    font-size: 24px;
+}
+
+@media(max-width: 600px){
+ .arcticle_container_style_all, .drink_container_style_all, .beilage_container_style_all{
+    justify-content:center;  
+}
+}

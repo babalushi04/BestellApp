@@ -1,206 +1,138 @@
-let myDishes = [
-    
+let myMenu = {
+  products: [
     {
-        "name":"Spaghetti Bolognese",
-        "price":"11.50",
-        "description":"Ein klassisches italienisches Nudelgericht mit einer herzhaften Fleischsauce.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/spaghetti-bolognese.jpg"
+      name: "Tofu Lasagna",
+      price: 12.90,
+      description: "Homemade tofu lasagna with fresh vegetables and tomato sauce.",
+      amount: 0,
+      image: "gerichte/lasagne.png"
     },
     {
-        "name":"Fettuccine Alfredo",
-        "price":"12.50",
-        "description":"Cremige Fettuccine-Nudeln in einer reichhaltigen Alfredo-Sauce aus Butter, Sahne und Parmesan.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/fettuccine-alfredo.jpg"
+      name: "Tofu Pie",
+      price: 9.50,
+      description: "Delicate tofu-filled pastry with a crispy crust.",
+      amount: 0,
+      image: "gerichte/pastete.png"
     },
     {
-        "name":"Spaghetti Carbonara",
-        "price":"12.99",
-        "description":"Ein klassisches italienisches Nudelgericht mit Eiern, Käse, Pancetta und Pfeffer.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/spaghetti-carbonara.jpg"
+      name: "Tofu Pizza",
+      price: 11.00,
+      description: "Classic pizza topped with tofu, tomato, and fresh herbs.",
+      amount: 0,
+      image: "gerichte/pizza.png"
     },
     {
-        "name":"Vegetarische Lasagne",
-        "price":"9.99",
-        "description":"Eine leckere Lasagne mit frischem Gemüse und Käse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/vegetarische-lasagne.jpg"
+      name: "Tofu Spaghetti",
+      price: 10.20,
+      description: "Spaghetti served with tofu chunks and tomato-herb sauce.",
+      amount: 0,
+      image: "gerichte/spaghetti.png"
     },
     {
-        "name":"Hamburger",
-        "price":"10.99",
-        "description":"Ein saftiger Hamburger mit frischem Salat, Tomate und Zwiebel.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/hamburger.jpg"
+      name: "Grilled Tofu",
+      price: 8.80,
+      description: "Grilled tofu slices marinated in soy sauce and garlic.",
+      amount: 0,
+      image: "gerichte/tofu1.png"
     },
     {
-        "name":"Chicken Burger",
-        "price":"11.99",
-        "description":"Ein würziger Chicken Burger mit knusprigem Hähnchenfilet und frischem Gemüse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/chicken-burger.jpg"
-    },
-    {
-        "name":"Pizza Margherita",
-        "price":"10.99",
-        "description":"Eine einfache Pizza mit Tomatensauce, frischem Mozzarella und Basilikum.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/margherita-pizza.jpg"
-    },
-    {
-        "name":"Pizza Salami ",
-        "price":"11.99",
-        "description":"Eine herzhafte Pizza mit würziger Salami und Käse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/salami-pizza.jpg"
-    },
-    {
-        "name":"Pizza Diavola ",
-        "price":"12.99",
-        "description":"Eine scharfe Pizza mit Peperoni und Käse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/diavola-pizza.jpg"
-    },
-    {
-        "name":"Pizza Funghi",
-        "price":"11.50",
-        "description":"Eine köstliche Pizza mit frischen Champignons und Käse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/pizza-funghi.jpg"
-    },
-    {
-        "name":"Pizza Prosciutto",
-        "price":"12.50",
-        "description":"Eine leckere Pizza mit Schinken und Käse.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/pizza-prosciutto.jpg"
-    },
-    {
-        "name":"Wiener Schnitzel",
-        "price":"13.50",
-        "description":"Ein klassisches Wiener Schnitzel aus zartem Kalbfleisch, paniert und goldbraun gebraten.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/wiener-schnitzel.jpg"
-    },
-    {
-        "name":"Rindersteak",
-        "price":"18.00",
-        "description":"Ein saftiges Rindersteak, perfekt gegrillt und serviert mit einer Auswahl an Beilagen.",
-        "amount":"0",
-        "image":"./assets/pics/gerichte/rindersteak.jpg"
+      name: "Tofu Burger",
+      price: 10.90,
+      description: "Vegan burger with a tofu patty, lettuce, and tomato.",
+      amount: 0,
+      image: "gerichte/tofuburger.png"
     }
-];
-let myBeilages = [
+  ],
+  drinks: [
     {
-        "name":"Pommes Frites",
-        "price":"3.50",
-        "description":"Knusprige Pommes Frites, perfekt als Beilage.",
-        "amount":"0",
-        "image":"./assets/pics/beilagen/pommes-frites.jpg"
+      name: "Blue Tonic",
+      price: 5.90,
+      description: "Refreshing blue cocktail with a hint of citrus and tonic.",
+      amount: 0,
+      image: "drinks/blue.png"
     },
     {
-        "name":"Onion Rings",
-        "price":"3.50",
-        "description":"Knusprige Zwiebelringe, perfekt als Beilage.",
-        "amount":"0",
-        "image":"./assets/pics/beilagen/onion-rings.jpg"
+      name: "Classic Tofu Drink",
+      price: 4.80,
+      description: "A light, fizzy drink with herbal notes and tofu essence.",
+      amount: 0,
+      image: "drinks/drink1.png"
     },
     {
-        "name":"Kartoffelsalat",
-        "price":"3.00",
-        "description":"Ein traditioneller deutscher Kartoffelsalat.",
-        "amount":"0",
-        "image":"./assets/pics/beilagen/kartoffelsalat.jpg"
+      name: "Golden Cocktail",
+      price: 6.50,
+      description: "A smooth golden blend with tropical fruit and a twist of lime.",
+      amount: 0,
+      image: "drinks/goldenCocktail.png"
     },
     {
-        "name":"Knoblauchbrot",
-        "price":"4.00",
-        "description":"Frisches Knoblauchbrot, perfekt als Beilage.",
-        "amount":"0",
-        "image":"./assets/pics/beilagen/knoblauchbrot.jpg"
+      name: "Jack's Tofu Whiskey",
+      price: 7.20,
+      description: "Whiskey-inspired tofu drink with bold smoky flavor.",
+      amount: 0,
+      image: "drinks/jack.png"
     },
     {
-        "name":"Bauern Salat",
-        "price":"5.00",
-        "description":"Ein frischer gemischter Salat mit verschiedenen Gemüsesorten.",
-        "amount":"0",
-        "image":"./assets/pics/beilagen/bauern-salat.jpg"
+      name: "Tofu Martini",
+      price: 6.00,
+      description: "Elegant martini-style drink with tofu-based clarity.",
+      amount: 0,
+      image: "drinks/martini.png"
+    },
+    {
+      name: "Tofu Piña Colada",
+      price: 6.80,
+      description: "Creamy coconut-pineapple drink with a tofu twist.",
+      amount: 0,
+      image: "drinks/pinacolada.png"
     }
-];
-let myDrinks = [
+  ],
+  supplements: [
     {
-        "name":"Wein Rot",
-        "price":"5.00",
-        "description":"Ein vollmundiger roter Wein.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/wein-rot.jpg"
+      name: "Side Mix",
+      price: 3.50,
+      description: "A small mix of seasonal vegetables.",
+      amount: 0,
+      image: "beilage/beilage1.png"
     },
     {
-        "name":"Bier von Fass",
-        "price":"6.00",
-        "description":"Ein frisch gezapftes Bier vom Fass.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/bier-von-fass.jpg"
+      name: "Crispy Chips",
+      price: 2.80,
+      description: "Golden, crispy potato chips with sea salt.",
+      amount: 0,
+      image: "beilage/chips.png"
     },
     {
-        "name":"Cola",
-        "price":"2.50",
-        "description":"Erfrischendes Cola-Getränk.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/cola.jpg"
+      name: "Ratatouille",
+      price: 4.20,
+      description: "Traditional Mediterranean vegetable mix.",
+      amount: 0,
+      image: "beilage/ratatoie.png"
     },
     {
-        "name":"Fanta",
-        "price":"2.50",
-        "description":"Fruchtiges Orangengetränk.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/fanta.jpg"
+      name: "Fresh Salad",
+      price: 3.00,
+      description: "A light and fresh green salad.",
+      amount: 0,
+      image: "beilage/salat1.png"
     },
     {
-        "name":"Sprite",
-        "price":"2.50",
-        "description":"Erfrischendes Zitronen-Limetten-Getränk.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/sprite.jpg"
+      name: "Sour Cream",
+      price: 1.50,
+      description: "Creamy dip made with herbs and sour cream.",
+      amount: 0,
+      image: "beilage/sourcreme.png"
     },
     {
-        "name":"Mineralwasser",
-        "price":"1.50",
-        "description":"Erfrischendes Mineralwasser.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/mineralwasser.jpg"
-    },
-    {
-        "name":"Apfelsaft",
-        "price":"2.00",
-        "description":"Frischer Apfelsaft.",
-        "amount":"0",
-        "image":"./assets/pics/drinks/apfelsaft.jpg"
+      name: "Tzatziki",
+      price: 1.80,
+      description: "Greek-style yogurt dip with cucumber and garlic.",
+      amount: 0,
+      image: "beilage/tzaziki.png"
     }
-];
+  ]
+};
 
-let myDesserts = [
-    {
-        "name":"Tiramisu",
-        "price":"4.50",
-        "description":"Ein klassisches italienisches Dessert mit Kaffee und Mascarpone.",
-        "amount":"0",
-        "image":"./assets/pics/desserts/tiramisu.jpg"
-    },
-    {
-        "name":"Panna Cotta",
-        "price":"4.00", 
-        "description":"Ein cremiges Dessert aus Sahne, Zucker und Gelatine.",
-        "amount":"0",
-        "image":"./assets/pics/desserts/panna-cotta.jpg"
-    },
-    {
-        "name":"Schokoladenkuchen",
-        "price":"5.00",
-        "description":"Ein saftiger Schokoladenkuchen mit reichhaltiger Schokoladenglasur.",
-        "amount":"0",
-        "image":"./assets/pics/desserts/schokoladenkuchen.jpg"
-    }
-];
+console.table(myMenu);
+
+console.table(myMenu);

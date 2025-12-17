@@ -1,102 +1,115 @@
-function asNumber(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }
-function euro(n) { return n.toFixed(2).replace('.', ',') + ' €'; }
+function getRandomProductsItems(productArr){
+    return`
+    <div class="container_article">
+              <div class="article_img_box">
+               <img class="img_article" src="assets/img/${productArr.image}" alt="">
 
-// Eine Speise-Kachel
-function dishCardHTML(categoryKey, idx, item) {
-  const price = asNumber(item.price);
-  return `
-    <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
-      <div class="card__header">
-        <h3 class="card__title">${item.name}</h3>
-        <div class="card__price">${euro(price)}</div>
+                <div id="name_of_article" class="name_style_article">${productArr.name}</div>
+                <div id="discription_of_article" class="description_style_article">${productArr.description}</div>
+                <div id="price_of_article" class="article_price_style">Price: ${productArr.price.toFixed(2)} $</div>
+                
+                <button onclick="addArticle('products', '${productArr.name}')" id="counter_button_add" class="btn_counter">
+                  <img src="assets/icons/add.svg" alt="Icon add Article" class="btn_counter_img">
+                </button>
+               
+                 <button onclick="removeArticle('products', '${productArr.name}')" id="counter_button_remove" class="btn_counter_remove">
+                  <img src="assets/icons/remove.svg" alt="Icon add Article" class="btn_counter_img">
+                </button>
+              </div>
+            </div>`;
+}
+
+function getRandomDrinksItems(drinksArr){
+    return `
+    <div class="drinks_container" id="drinks_container_box">
+      <div class="drinks_img_box">
+     <img class="img_drink" src="assets/img/${drinksArr.image}" alt="">
+
+        <div class="name_style_drink">${drinksArr.name}</div>
+        <div class="description_style_drink">${drinksArr.description}</div>
+        <div class="drink_price_style">Price: ${drinksArr.price.toFixed(2)} $</div>
+
+        <button onclick="addArticle('drinks', '${drinksArr.name}')" class="btn_counter">
+          <img src="assets/icons/add.svg" alt="Icon add Article" class="btn_counter_img">
+        </button>
+
+        <button onclick="removeArticle('drinks', '${drinksArr.name}')" class="btn_counter_remove">
+          <img src="assets/icons/remove.svg" alt="Icon remove Article" class="btn_counter_img">
+        </button>
       </div>
-      <p class="card__desc">${item.description}</p>
-      <div class="card__actions">
-        <button class="btn" onclick="event.stopPropagation(); addToBasket('${categoryKey}', ${idx})">+</button>
+    </div>`;
+}
+
+
+function getRandomSubbTemplate(subbArr){
+    return `
+    <div class="beilage_container" id="beilage_container_box">
+      <div class="beilage_img_box">
+        <img class="img_beilage" src="assets/img/${subbArr.image}" alt="">
+
+        <div class="name_style_drink">${subbArr.name}</div>
+        <div class="description_style_drink">${subbArr.description}</div>
+        <div class="beilage_price_style">Price: ${subbArr.price.toFixed(2)} $</div>
+
+        <button onclick="addArticle('supplements', '${subbArr.name}')" class="btn_counter">
+          <img src="assets/icons/add.svg" alt="Icon add Article" class="btn_counter_img">
+        </button>
+
+        <button onclick="removeArticle('supplements', '${subbArr.name}')" class="btn_counter_remove">
+          <img src="assets/icons/remove.svg" alt="Icon remove Article" class="btn_counter_img">
+        </button>
       </div>
-    </article>
-  `;
+    </div>`;
 }
 
-// Kategorie-Abschnitt
-function categorySectionHTML(title, categoryKey, list) {
-  const items = list.map((it, i) => dishCardHTML(categoryKey, i, it)).join('');
-  return `
-    <section class="category">
-      <h2 class="category__title">${title}</h2>
-      <div class="grid">${items}</div>
-    </section>
-  `;
-}
-
-// Warenkorb-Zeile
-function basketRowHTML(item) {
-  return `
-    <div class="basket-row">
-      <div class="basket-name">${item.name}</div>
-      <div class="basket-controls">
-        <button class="btn btn--ghost" onclick="decItem('${item.id}')">−</button>
-        <span class="basket-qty">${item.qty}</span>
-        <button class="btn" onclick="incItem('${item.id}')">+</button>
+function getBasketItemTemplate(cat, item) {
+    return `
+    <div class="img_counter_price_trash">
+      <div class="basket_tofu_img_style">
+        <img class="basket_img_test standard_border_radius" src="assets/img/${item.image}" alt="">
       </div>
-      <div class="basket-sum">${euro(item.price * item.qty)}</div>
-      <button class="btn btn--ghost" title="Entfernen" onclick="removeItem('${item.id}')">x</button>
-    </div>
-  `;
-}
-
-function basketListHTML(items) {
-  if (!items.length) return `<p>Dein Warenkorb ist leer.</p>`;
-  return items.map(basketRowHTML).join('');
-}
-
-function basketSummaryHTML(subtotal, delivery, total) {
-  return `
-    <div class="basket-summary">
-      <div><span>Zwischensumme</span><span>${euro(subtotal)}</span></div>
-      <div><span>Lieferung</span><span>${euro(delivery)}</span></div>
-      <hr/>
-      <div class="basket-total"><span>Gesamt</span><span>${euro(total)}</span></div>
-      <button class="btn btn--primary" ${total === 0 ? 'disabled' : ''} onclick="checkout()">Zur Kasse</button>
-    </div>
-  `;
-}
-function dishCardHTML(categoryKey, idx, item) {
-  const price = asNumber(item.price);
-  const src = item.image || './assets/pics/placeholder.jpg';   // Fallback EINHEITLICH in /pics
-  return `
-    <article class="card" onclick="addToBasket('${categoryKey}', ${idx})">
-      <img class="card__img"
-           src="${src}"
-           alt="${item.name}"
-           loading="lazy"
-            onerror="this.onerror=null;this.src='./assets/pics/placeholder.jpg';"/> 
-
-      <div class="card__header">
-        <h3 class="card__title">${item.name}</h3>
-        <div class="card__price">${euro(price)}</div>
+      <div class="name_price_container">
+        <div class="name_of_tofu_style">${item.name}</div>
+        <div class="price_total_style">${(item.price * item.amount).toFixed(2)} $</div>
       </div>
+      
+      <div class="plus_minus_amount">
+        <button onclick="removeArticle('${cat}', '${item.name}')" class="btn_counter_commande">
+          <img class="icon_commade_btn" src="./assets/icons/remove.svg" alt="">
+        </button>
 
-      <p class="card__desc">${item.description}</p>
+        <div class="amount_output_style">${item.amount}</div>
+        <button onclick="addArticle('${cat}', '${item.name}')" class="btn_counter_commande">
+          <img class="icon_commade_btn" src="./assets/icons/add.svg" alt="">
+        </button>
 
-      <div class="card__actions">
-        <button class="btn"
-                onclick="event.stopPropagation(); addToBasket('${categoryKey}', ${idx})">+</button>
+        <button onclick="clearProduct('${cat}', '${item.name}')" class="btn_counter_commande">
+          <img class="icon_commade_btn" src="assets/icons/trash.png" alt="Trash Icon">
+        </button>
       </div>
-    </article>
-  `;
+    </div>`;
 }
 
-function categorySectionHTML(title, categoryKey, list){
-  const items = list.map((it, i) => dishCardHTML(categoryKey, i, it)).join('');
-  return `
-    <section class="category" id="${categoryKey}">
-      <h2 class="category__title">${title}</h2>
-      <div class="grid">${items}</div>
-    </section>
-  `;
+function getBasketSummaryTemplate(subtotal) {
+    const shipping = deliveryType === "delivery" ? 5 : 0;
+    const total = subtotal + shipping;
+    return `
+    <div class="total_cost_content" id="content_total_cost">
+      <table class="summary_table">
+        <tr><td>Subtotal:</td><td class="betrag" id="subtotal">${subtotal.toFixed(2)} $</td></tr>
+        <tr><td>Shipping:</td><td class="betrag" id="shipping">${shipping.toFixed(2)} $</td></tr>
+        <tr class="gesamt_row"><td><strong>Total</strong></td><td class="betrag" id="total">${total.toFixed(2)} $</td></tr>
+      </table>
+      <button onclick="clearBasket()" class="btn_counter_commande">
+        <img class="icon_commade_btn" src="assets/icons/trash.png" alt="Trash Icon">
+      </button>
+    </div>`;
 }
 
 
-
-
+window.addEventListener("load", () => {
+  renderAllItems("article_container_all", myMenu.products, getRandomProductsItems);
+  renderAllItems("drink_container_all", myMenu.drinks, getRandomDrinksItems);
+  renderAllItems("beilage_container_all", myMenu.supplements, getRandomSubbTemplate);
+  renderBasketCart();
+});
