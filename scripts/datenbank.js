@@ -1,7 +1,7 @@
 let myMenu = {
   products: [
     {
-      "name": "",
+      "name": "Tofu Lasagna",
       "price": 12.90,
       "description": "Homemade tofu lasagna with fresh vegetables and tomato sauce.",
       "amount": 0,

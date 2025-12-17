@@ -158,8 +158,6 @@ h1 {
         margin: 0;
     }
 
-
-
     .list_container.active {
         display: flex;
     }
@@ -169,12 +167,7 @@ h1 {
         text-align: center;
         width: 100%;
     }
-
-
-
 }
-
-
 
 .login_box {
     margin-right: 30px;
@@ -190,9 +183,9 @@ h1 {
 .bg_img {
     width: 100%;
     height: 100vh;
-    background-image: url('./assets/img/bgtofofurosa.png');
+    background-image: url(./assets/pics/hero.jpg);
     background-size: cover;
-    background-position: top center;
+    background-position: center;
     /* Zeigt die obere Hälfte */
     background-repeat: no-repeat;
     margin-top: 6%;
