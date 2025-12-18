@@ -69,11 +69,6 @@ nav {
 }
 
 
-@media (max-width: 900px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* Menü */
 #menu-root {
@@ -175,6 +170,12 @@ nav {
     object-fit: cover;
     border-radius: 10px;
     display: block;
+}
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
 }
 
 
