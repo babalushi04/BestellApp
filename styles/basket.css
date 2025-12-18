@@ -1,31 +1,12 @@
 /* Warenkorb rechts */
 #basket {
     position: sticky;
-    top: calc(var(--header-h, 64px) + 8px);
+    top: calc(var(--header-h, 64px) + 16px);
     display: flex;
-    flex-direction: column;
-    max-height: calc(100vh - (var(--header-h, 64px) + 24px));
-}
-
-.basket-list {
-    flex: 1 1 auto;
-    /* nimmt den restlichen Platz ein */
+    max-height: calc(100vh - var(--header-h, 64px) - 32px);
     overflow-y: auto;
-    /* vertikales Scrollen */
-    overscroll-behavior: contain;
-    /* verhindert Scroll-Ketten-Effekte */
-    padding-right: 4px;
-    /* Platz für Scrollbar */
 }
 
-.basket-list::-webkit-scrollbar {
-    width: 8px;
-}
-
-.basket-list::-webkit-scrollbar-thumb {
-    background: #ddd;
-    border-radius: 8px;
-}
 
 #basket {
     background: #fff;
