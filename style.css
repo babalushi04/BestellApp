@@ -31,7 +31,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    background-color: coral;
+    background-color: rgba(231, 108, 31, 1);
 }
 
 nav {
@@ -44,7 +44,7 @@ nav {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: var(--gap);
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 16px auto;
     padding: 0 16px;
 }
@@ -84,6 +84,7 @@ nav {
 
 .category__title {
     margin: 8px 0;
+    background-color:rgba(231, 108, 31, 1); 
 }
 
 .grid {
@@ -144,80 +145,13 @@ nav {
 }
 
 .btn--primary {
-    background: #ff7a00;
+    background:rgba(231, 108, 31, 1);
     color: #fff;
     border-color: #ff7a00;
 }
 
 .btn--ghost {
     background: transparent;
-}
-
-/* Warenkorb rechts */
-#basket {
-    position: sticky;
-    top: 72px;
-    align-self: start;
-}
-
-.basket {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: var(--radius);
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.basket h2 {
-    margin: 0 0 8px;
-}
-
-.basket-row {
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.basket-row:last-child {
-    border-bottom: none;
-}
-
-.basket-name {
-    font-size: 0.95rem;
-}
-
-.basket-controls {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.basket-qty {
-    min-width: 1.5rem;
-    text-align: center;
-}
-
-.basket-sum {
-    font-weight: 600;
-}
-
-.basket-summary {
-    display: grid;
-    gap: 6px;
-}
-
-.basket-summary>div {
-    display: flex;
-    justify-content: space-between;
-}
-
-.basket-total {
-    font-weight: 700;
 }
 
 .site-logo {
@@ -242,41 +176,27 @@ nav {
     border-radius: 10px;
     display: block;
 }
-  
 
-@media (max-width: 600px) {
-    main.layout {
+
+@media (max-width: 700px) {
+    .main-layout {
         grid-template-columns: 1fr;
-        /* eine Spalte */
         gap: 12px;
+        max-width: 600px;
+        margin: 16px auto;
+        padding: 0 16px;
     }
-
-    /* Basket unter das Menü */
-    #basket {
-        position: static;
-        /* Sticky komplett deaktivieren */
-        grid-column: 1;
-        /* gleiche Spalte wie Menü */
-        margin-top: 16px;
-        /* Abstand nach dem Menü */
+    
+    #menu-root {
         width: 100%;
-        /* Volle Breite nutzen */
+        max-width: 500px;
+        margin: 0 auto;
     }
-
-    .basket {
-        max-width: 100%;
-        /* Container nicht überschreiten */
+    
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
     }
-
-    .basket-row {
-        font-size: 0.9rem;
-        /* Kleinere Schrift auf mobil */
-        gap: 4px;
-    }
-
-    .basket-controls button {
-        padding: 4px 8px;
-        /* Kleinere Buttons */
-        font-size: 0.85rem;
-    }
+    
 }

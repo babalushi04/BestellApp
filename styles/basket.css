@@ -1,3 +1,21 @@
+/* Warenkorb rechts */
+#basket {
+    position: sticky;
+    top: 72px;
+    align-self: start;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+}
+
+#basket {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 .basket h2 {
     margin: 0 0 8px;
@@ -20,7 +38,7 @@
     font-size: 0.95rem;
 }
 
-.basket-controls {
+.basket-controls { 
     display: flex;
     align-items: center;
     gap: 6px;
@@ -31,11 +49,11 @@
     text-align: center;
 }
 
-.basket-sum {
+.basket-sum { 
     font-weight: 600;
 }
 
-.basket-summary {
+.basket-summary { 
     display: grid;
     gap: 6px;
 }
@@ -56,7 +74,7 @@
     justify-content: center;
 }
 
-.card__img {
+.card__img { 
     width: 100%;
     height: 140px;
     object-fit: cover;
@@ -64,36 +82,7 @@
     display: block;
 }
 
-#basket {
-    grid-column: 2;
-    position: sticky;
-    top: calc(var(--header-h) + 8px);
-    margin-top: 0;
-    align-self: start;
-
-}
-
-#basket {
-    position: sticky;
-    top: 72px;
-    align-self: start;
-}
-
-.basket {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: var(--radius);
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.basket h2 {
-    margin: 0 0 8px;
-}
-
-.modal {
+.modal { 
     border: none;
     border-radius: 12px;
     padding: 16px 16px 12px;
@@ -105,9 +94,43 @@
     background: rgba(0, 0, 0, .4);
 }
 
-.modal-actions {
+.modal-actions { 
     display: flex;
     justify-content: flex-end;
     gap: 8px;
     margin-top: 12px;
+}
+
+
+@media (max-width: 700px) {
+
+    /* Basket unter das Menü */
+    #basket {
+        position: static;
+        /* Sticky komplett deaktivieren */
+        grid-column: 1;
+        /* gleiche Spalte wie Menü */
+        margin-top: 16px;
+        /* Abstand nach dem Menü */
+        width: 100%;
+        /* Volle Breite nutzen */
+    }
+
+    .basket {
+        max-width: 100%;
+        /* Container nicht überschreiten */
+    }
+
+    .basket-row {
+        font-size: 0.9rem;
+        /* Kleinere Schrift auf mobil */
+        gap: 4px;
+    }
+
+    .basket-controls button {
+        padding: 4px 8px;
+        /* Kleinere Buttons */
+        font-size: 0.85rem;
+    }
+
 }
