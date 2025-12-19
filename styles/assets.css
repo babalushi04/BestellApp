@@ -97,7 +97,7 @@ nav {
 .hero__image-container {
     width: 100%;
     max-width: 1920px;
-    height: 454px;
+    height: 420px;
     background-image: url(../assets/pics/hero.jpg);
     background-size: cover;
     background-position: center;
