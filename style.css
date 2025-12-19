@@ -181,7 +181,7 @@ main.main-layout {
 
 
 @media (max-width: 700px) {
-    .main-layout {
+    main.main-layout {
         grid-template-columns: 1fr;
         gap: 12px;
         max-width: 600px;
