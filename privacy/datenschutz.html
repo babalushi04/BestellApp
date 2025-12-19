@@ -10,13 +10,30 @@
 </head>
 
 <body>
-    <header>
-        <nav class="nav-header" aria-label="Hauptnavigation">
-            <a class="site-logo" href="../index.html" aria-label="Startseite">
-                <img class="logo-header" src="../assets/pics/Logo.png" alt="Bestell App Logo" height="40">
-            </a>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="header-inner" aria-label="Hauptnavigation">
+      <a class="site-logo" href="../index.html" aria-label="Startseite">
+        <img class="logo-header" src="../assets/pics/Logo.png" alt="Bestell App Logo" height="40">
+      </a> <!-- Desktop-Navigation -->
+      <nav class="nav-desktop" aria-label="Hauptnavigation">
+        <a href="../index.html">Startseite</a>
+        <a href="../impressum/impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </nav>
+      <!-- Hamburger-Button (nur mobil sichtbar) -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menü öffnen/schließen">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <!-- Mobiles Dropdown-Menü -->
+      <nav id="mobileMenu" class="nav-mobile" aria-label="Mobiles Menü" hidden>
+        <a href="../index.html">Startseite</a>
+        <a href="../impressum/impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </header>
     <main>
         <div>
             <h1>Datenschutz&shy;erkl&auml;rung</h1>
@@ -185,6 +202,7 @@
 <script src="./scripts/template.js" defer></script>
 <script src="./scripts/app.js" defer></script>
 <script src="./scripts/basket.js" defer></script>
+<script src="./datenschutz.js" defer></script>
 <script src="./script.js" defer></script>
 
 </html>
