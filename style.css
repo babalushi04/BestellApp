@@ -1,6 +1,5 @@
 :root {
     --header-h: 64px;
-    /* echte Header-Höhe eintragen */
 }
 
 * {
@@ -20,7 +19,6 @@ body {
     margin: 0 auto;
 }
 
-
 header.site-header {
     position: sticky;
     top: 0;
@@ -28,6 +26,7 @@ header.site-header {
     border-bottom: 1px solid #eee;
     z-index: 10;
 }
+
 
 /* Flex-Container für Logo (links) + Nav (rechts) */
 .header-inner {
@@ -37,11 +36,12 @@ header.site-header {
     padding: 10px 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo links, Nav rechts */
+    justify-content: space-between;
+    /* Logo links, Nav rechts */
     gap: 16px;
 }
 
-.main-layout {
+main.main-layout {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: var(--gap);
