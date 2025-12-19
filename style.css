@@ -21,23 +21,24 @@ body {
 }
 
 
-header {
+header.site-header {
     position: sticky;
     top: 0;
-    background: #fff;
+    background: rgba(231, 108, 31, 1);
     border-bottom: 1px solid #eee;
-    padding: 10px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     z-index: 10;
-    background-color: rgba(231, 108, 31, 1);
 }
 
-nav {
+/* Flex-Container für Logo (links) + Nav (rechts) */
+.header-inner {
+    max-width: 1920px;
+    /* mittig begrenzen */
+    margin: 0 auto;
+    padding: 10px 16px;
     display: flex;
-    gap: 20px;
     align-items: center;
+    justify-content: space-between; /* Logo links, Nav rechts */
+    gap: 16px;
 }
 
 .main-layout {
@@ -79,7 +80,7 @@ nav {
 
 .category__title {
     margin: 8px 0;
-    background-color:rgba(231, 108, 31, 1); 
+    background-color: rgba(231, 108, 31, 1);
 }
 
 .grid {
@@ -140,7 +141,7 @@ nav {
 }
 
 .btn--primary {
-    background:rgba(231, 108, 31, 1);
+    background: rgba(231, 108, 31, 1);
     color: #fff;
     border-color: #ff7a00;
 }
@@ -187,13 +188,13 @@ nav {
         margin: 16px auto;
         padding: 0 16px;
     }
-    
+
     #menu-root {
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
     }
-    
+
     .grid {
         grid-template-columns: 1fr;
         max-width: 400px;
