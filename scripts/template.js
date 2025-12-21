@@ -1,7 +1,7 @@
 
 function getDishCardTemplate(cat, i, it) {
   var src = it.image ? it.image : './assets/pics/placeholder.jpg';
-  var priceText = euro(asNumber(it.price)); // kurz & klar
+  var priceText = euro(asNumber(it.price));
 
   return `
   <article class="card" onclick="addToBasket('${cat}', ${i})">
