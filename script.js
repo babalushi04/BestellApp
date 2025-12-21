@@ -29,8 +29,11 @@ function basketRowHTML(item) {
 }
 
 function basketListHTML(items) {
-  if (!items.length) return `<p>Dein Warenkorb ist leer.</p>`;
-  return items.map(basketRowHTML).join('');
+  if (!items || !items.length)
+    return '<p>Dein Warenkorb ist leer.</p>';
+  var html = '';
+  for (var i = 0; i < items.length; i++) html += basketRowHTML(items[i]);
+  return html;
 }
 
 function basketSummaryHTML(subtotal, delivery, total) {
