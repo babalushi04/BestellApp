@@ -28,16 +28,13 @@ header.site-header {
 }
 
 
-/* Flex-Container für Logo (links) + Nav (rechts) */
 .header-inner {
-    max-width: 1920px;
-    /* mittig begrenzen */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 10px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Logo links, Nav rechts */
     gap: 16px;
 }
 
@@ -69,9 +66,6 @@ main.main-layout {
     margin-top: 12px;
 }
 
-
-
-/* Menü */
 #menu-root {
     display: flex;
     flex-direction: column;

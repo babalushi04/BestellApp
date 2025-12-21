@@ -1,5 +1,3 @@
-/* Desktop-Links sichtbar ab 768px, sonst verstecken */
-
 nav {
     display: flex;
     gap: 20px;
@@ -39,7 +37,7 @@ nav {
     background: #fff;
 }
 
-/* Mobiles Dropdown unter dem Header */
+
 .nav-mobile {
     position: absolute;
     right: 0;
@@ -54,17 +52,16 @@ nav {
     min-width: 200px;
 }
 
-/* Links im mobilen Menü */
+
 .nav-mobile a {
     color: #222;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* Animation: sanftes Ein-/Ausblenden */
+
 .nav-mobile[hidden] {
     display: block;
-    /* für Transition hack */
     visibility: hidden;
     opacity: 0;
     transform: translateY(-6px);
@@ -96,7 +93,7 @@ nav {
 
 .hero__image-container {
     width: 100%;
-    max-width: 1920px;
+     max-width: 1440px;
     height: 420px;
     background-image: url(../assets/pics/hero.jpg);
     background-size: cover;
@@ -132,8 +129,6 @@ nav {
     text-decoration: none;
 }
 
-
-/* Breakpoint: Desktop */
 @media (min-width: 768px) {
     .site-header {
         grid-template-columns: auto 1fr;
