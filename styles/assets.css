@@ -93,7 +93,7 @@ nav {
 
 .hero__image-container {
     width: 100%;
-     max-width: 1440px;
+    max-width: 1440px;
     height: 420px;
     background-image: url(../assets/pics/hero.jpg);
     background-size: cover;
@@ -117,10 +117,6 @@ nav {
     font-size: 1.2rem;
     color: #555;
     max-width: 600px;
-}
-
-:root {
-    --header-h: 64px;
 }
 
 .brand {
