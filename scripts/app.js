@@ -1,7 +1,6 @@
 const BASKET_KEY = 'basket_v1';
 const DELIVERY_FEE = 2.5;
 
-// Kategorien-Konfiguration (Name -> Datenliste)
 const CATALOG = [
   { key: 'dishes', title: 'Hauptgerichte', list: () => myDishes },
   { key: 'beilagen', title: 'Beilagen', list: () => myBeilages },
@@ -17,7 +16,6 @@ function init() {
   renderBasket();
 }
 
-/* ========== Menü rendern ========== */
 function renderMenu() {
   const root = document.getElementById('menu-root');
   root.innerHTML = '';
@@ -27,7 +25,6 @@ function renderMenu() {
   }
 }
 
-/* ========== Warenkorb (localStorage) ========== */
 function loadBasket() {
   try { return JSON.parse(localStorage.getItem(BASKET_KEY)) ?? {}; }
   catch { return {}; }
@@ -93,13 +90,13 @@ function renderBasket() {
   `;
 }
 
-/* ========== Daten säubern ========== */
+
 function normalizeLibrary() {
   [myDishes, myBeilages, myDrinks, myDesserts].forEach(list => {
     list.forEach(it => {
-      it.price = asNumber(it.price);   // aus String -> Number
+      it.price = asNumber(it.price); 
       it.amount = asNumber(it.amount);
-      it.image = it.image || './assets/pics/placeholder.jpg'; // Fallback EINHEITLICH in /pics
+      it.image = it.image || './assets/pics/placeholder.jpg';
     });
   });
 }
@@ -111,10 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
   checkoutMsg = document.getElementById('checkoutMessage');
   checkoutOkBtn = document.getElementById('checkoutOkBtn');
 
-  // Button schließt den Dialog
+
   checkoutOkBtn?.addEventListener('click', () => checkoutDialog.close());
 
-  // Optional: Klick auf den Hintergrund schließt den Dialog
+
   checkoutDialog?.addEventListener('click', (e) => {
     const r = checkoutDialog.getBoundingClientRect();
     const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
@@ -128,21 +125,18 @@ function openCheckoutDialog(text) {
     checkoutDialog.showModal();
     checkoutOkBtn?.focus();
   } else {
-    // Fallback für sehr alte Browser
     alert(text || 'Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚');
   }
 }
 
 
-// app.js
+
 function checkout() {
   const items = Object.values(loadBasket());
   if (!items.length) return;
 
-  // Warenkorb leeren (persistiert) und UI aktualisieren
   saveBasket({});
   renderBasket();
 
-  // Dialog anzeigen
   openCheckoutDialog('Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚');
 }
