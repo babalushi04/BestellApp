@@ -12,19 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
         setOpen(!isOpen);
     });
 
-    // Schließen bei Klick außerhalb
+
     document.addEventListener('click', (e) => {
         if (menu.hidden) return;
         const clickInside = e.target.closest('#mobileMenu, .nav-toggle');
         if (!clickInside) setOpen(false);
     });
 
-    // Schließen nach Klick auf einen Menülink
     menu.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => setOpen(false));
     });
 
-    // Tastatur: Escape schließt
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') setOpen(false);
     });

@@ -50,7 +50,7 @@ function categorySectionHTML(title, categoryKey, list) {
   list = Array.isArray(list) ? list : [];
   var items = '';
   for (var i = 0; i < list.length; i++) {
-    items += dishCardHTML(categoryKey, i, list[i]); 
+    items += dishCardHTML(categoryKey, i, list[i]);
   }
   return ''
     + '<section class="category" id="' + categoryKey + '">'
@@ -73,6 +73,7 @@ function loadBasket() {
     return {};
   }
 }
+
 function saveBasket(obj) {
   localStorage.setItem(BASKET_KEY, JSON.stringify(obj));
 }
@@ -85,6 +86,7 @@ function getListByKey(key) {
   }
   return [];
 }
+
 function itemFromCatalog(categoryKey, idx) {
   var list = getListByKey(categoryKey);
   return list[idx];
@@ -115,6 +117,7 @@ function incItem(id) {
   saveBasket(basket);
   renderBasket();
 }
+
 function decItem(id) {
   var basket = loadBasket();
   if (!basket[id]) return;
@@ -123,6 +126,7 @@ function decItem(id) {
   saveBasket(basket);
   renderBasket();
 }
+
 function removeItem(id) {
   var basket = loadBasket();
   delete basket[id];
@@ -140,6 +144,7 @@ function basketItemsArray() {
   }
   return arr;
 }
+
 function renderBasket() {
   var root = document.getElementById('basket');
   var items = basketItemsArray();
@@ -157,6 +162,8 @@ function renderBasket() {
     + '<div class="basket-list">' + basketListHTML(items) + '</div>'
     + basketSummaryHTML(subtotal, delivery, total)
     + '</div>';
+
+  updateBasketFabCount();
 }
 
 function basketRowHTML(item) { return getBasketRowTemplate(item); }
@@ -167,6 +174,7 @@ function basketListHTML(items) {
   for (var i = 0; i < items.length; i++) { html += basketRowHTML(items[i]); }
   return html;
 }
+
 function basketSummaryHTML(s, d, t) {
   return getBasketSummaryTemplate(s, d, t);
 }
@@ -203,6 +211,7 @@ function openCheckoutDialog(text) {
     alert(text || 'Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚');
   }
 }
+
 function checkout() {
   var items = basketItemsArray();
   if (!items.length) return;
@@ -210,4 +219,44 @@ function checkout() {
   renderBasket();
   openCheckoutDialog('Bezahlt! Danke für deine Bestellung, wir liefern bald! 🚚');
 }
+
+function getBasketCount() {
+  var obj = loadBasket(), id, count = 0;
+  for (id in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, id)) {
+      count += parseFloat(obj[id].qty) || 0;
+    }
+  }
+  return count;
+}
+
+function updateBasketFabCount() {
+  var btn = document.getElementById('basketFab');
+  if (!btn) return;
+  var c = getBasketCount();
+  btn.textContent = 'Warenkorb (' + c + ')';
+}
+
+function openBasket(){
+  var el = document.getElementById('basket');
+  var bd = document.getElementById('basketBackdrop');
+  if (el) el.classList.add('basket--open');
+  if (bd) bd.style.display = 'block';
+}
+
+function closeBasket(){
+  var el = document.getElementById('basket');
+  var bd = document.getElementById('basketBackdrop');
+  if (el) el.classList.remove('basket--open');
+  if (bd) bd.style.display = 'none';
+}
+
+function toggleBasket(){
+  var el = document.getElementById('basket');
+  if (!el) return;
+  el.classList.contains('basket--open') ? 
+  closeBasket() : 
+  openBasket();
+}
+
 

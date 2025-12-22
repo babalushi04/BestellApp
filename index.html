@@ -33,7 +33,6 @@
       <!-- Mobiles Dropdown-Menü -->
       <nav id="mobileMenu" class="nav-mobile" aria-label="Mobiles Menü" hidden>
         <a href="#dishes">Karte</a>
-        <a href="#basket">Warenkorb</a>
         <a href="./impressum/impressum.html">Impressum</a>
         <a href="./privacy/datenschutz.html">Datenschutz</a>
       </nav>
@@ -67,6 +66,9 @@
       <button class="btn btn--primary" id="checkoutOkBtn">Okay</button>
     </div>
   </dialog>
+  <button id="basketFab" class="basket-fab" onclick="toggleBasket()">Warenkorb (0)</button>
+  <div id="basketBackdrop" class="basket-backdrop" onclick="toggleBasket()"></div>
+
 </body>
 <script src="./scripts/datenbank.js" defer></script>
 <script src="./scripts/template.js" defer></script>
