@@ -35,7 +35,6 @@ function init() {
   renderBasket();
 }
 
-
 function renderMenu() {
   var root = document.getElementById('menu-root');
   root.innerHTML = '';
@@ -145,14 +144,20 @@ function basketItemsArray() {
   return arr;
 }
 
+function calcSubtotal(items) {
+  var sum = 0;
+  for (var i = 0; i < items.length; i++) {
+    sum += asNumber(items[i].price) * asNumber(items[i].qty);
+  }
+  return sum;
+}
+
 function renderBasket() {
   var root = document.getElementById('basket');
   var items = basketItemsArray();
 
   var subtotal = 0;
-  for (var i = 0; i < items.length; i++) {
-    subtotal += asNumber(items[i].price) * asNumber(items[i].qty);
-  }
+  var subtotal = calcSubtotal(items);
   var delivery = items.length ? DELIVERY_FEE : 0;
   var total = subtotal + delivery;
 
