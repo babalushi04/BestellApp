@@ -26,7 +26,7 @@
 
 .basket-row {
     display: grid;
-    grid-template-columns: 1fr auto auto auto;
+    grid-template-columns: 1fr 90px 70px 34px;
     align-items: center;
     gap: 8px;
     padding: 8px 0;
@@ -38,21 +38,34 @@
 }
 
 .basket-name {
-    font-size: 0.95rem;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .basket-controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: 35px 1fr 35px;
     align-items: center;
     gap: 6px;
+    width: 110px;
 }
 
 .basket-qty {
-    min-width: 1.5rem;
     text-align: center;
+    min-width: 0;
+}
+
+.basket-remove {
+    width: 34px;
+    height: 34px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
 }
 
 .basket-sum {
+    text-align: right;
     font-weight: 600;
 }
 
@@ -70,6 +83,9 @@
     font-weight: 700;
 }
 
+.basket-close {
+    display: none;
+}
 
 .site-logo {
     height: 52px;
@@ -145,7 +161,6 @@
         bottom: 0;
         z-index: 50;
         display: none;
-        /* wirklich weg */
         margin: 0;
         border-radius: 12px 12px 0 0;
         max-height: 60vh;
@@ -167,5 +182,30 @@
         max-height: calc(60vh - 220px);
         overflow-y: auto;
     }
+
+    .basket-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .basket-close {
+        width: 34px;
+        height: 34px;
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        display: inline-grid;
+        place-items: center;
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .basket-close:hover {
+        background: #f5f5f5;
+    }
+
 
 }

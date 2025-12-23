@@ -158,8 +158,11 @@ function renderBasket() {
 
   root.innerHTML = ''
     + '<div class="basket">'
-    + '<h2>Warenkorb</h2>'
-    + '<div class="basket-list">' + basketListHTML(items) + '</div>'
+    + '  <div class="basket-head">'
+    + '    <h2>Warenkorb</h2>'
+    + '    <button type="button" class="basket-close" aria-label="Warenkorb schließen" onclick="closeBasket()">×</button>'
+    + '  </div>'
+    + '  <div class="basket-list">' + basketListHTML(items) + '</div>'
     + basketSummaryHTML(subtotal, delivery, total)
     + '</div>';
 
@@ -237,26 +240,26 @@ function updateBasketFabCount() {
   btn.textContent = 'Warenkorb (' + c + ')';
 }
 
-function openBasket(){
+function openBasket() {
   var el = document.getElementById('basket');
   var bd = document.getElementById('basketBackdrop');
   if (el) el.classList.add('basket--open');
   if (bd) bd.style.display = 'block';
 }
 
-function closeBasket(){
+function closeBasket() {
   var el = document.getElementById('basket');
   var bd = document.getElementById('basketBackdrop');
   if (el) el.classList.remove('basket--open');
   if (bd) bd.style.display = 'none';
 }
 
-function toggleBasket(){
+function toggleBasket() {
   var el = document.getElementById('basket');
   if (!el) return;
-  el.classList.contains('basket--open') ? 
-  closeBasket() : 
-  openBasket();
+  el.classList.contains('basket--open') ?
+    closeBasket() :
+    openBasket();
 }
 
 
