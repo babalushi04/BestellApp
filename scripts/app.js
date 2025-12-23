@@ -183,16 +183,6 @@ function basketSummaryHTML(s, d, t) {
 }
 
 function normalizeLibrary() {
-  [myDishes, myBeilages, myDrinks, myDesserts].forEach(list => {
-    list.forEach(it => {
-      it.price = asNumber(it.price);
-      it.amount = asNumber(it.amount);
-      it.image = it.image || './assets/pics/placeholder.jpg';
-    });
-  });
-}
-
-function normalizeLibrary() {
   var lists = [myDishes, myBeilages, myDrinks, myDesserts];
   for (var li = 0; li < lists.length; li++) {
     var list = lists[li];
