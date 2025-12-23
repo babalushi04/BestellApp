@@ -156,7 +156,6 @@ function renderBasket() {
   var root = document.getElementById('basket');
   var items = basketItemsArray();
 
-  var subtotal = 0;
   var subtotal = calcSubtotal(items);
   var delivery = items.length ? DELIVERY_FEE : 0;
   var total = subtotal + delivery;
