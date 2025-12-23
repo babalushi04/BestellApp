@@ -1,7 +1,7 @@
-var BASKET_KEY = 'basket_v1';
-var DELIVERY_FEE = 2.5;
+const BASKET_KEY = 'basket_v1';
+const DELIVERY_FEE = 2.5;
 
-var CATALOG = [
+const CATALOG = [
   { key: 'dishes', title: 'Hauptgerichte', list: function () { return myDishes; } },
   { key: 'beilagen', title: 'Beilagen', list: function () { return myBeilages; } },
   { key: 'drinks', title: 'Getränke', list: function () { return myDrinks; } },
@@ -10,7 +10,7 @@ var CATALOG = [
 
 window.onload = init;
 
-var checkoutDialog, checkoutMsg, checkoutOkBtn;
+let checkoutDialog, checkoutMsg, checkoutOkBtn;
 
 function init() {
 
@@ -36,21 +36,23 @@ function init() {
 }
 
 function renderMenu() {
-  var root = document.getElementById('menu-root');
+  const root = document.getElementById('menu-root');
   root.innerHTML = '';
-  for (var i = 0; i < CATALOG.length; i++) {
-    var cat = CATALOG[i];
-    var html = categorySectionHTML(cat.title, cat.key, cat.list());
+  for (let i = 0; i < CATALOG.length; i++) {
+    const cat = CATALOG[i];
+    const html = categorySectionHTML(cat.title, cat.key, cat.list());
     root.insertAdjacentHTML('beforeend', html);
   }
 }
 
 function categorySectionHTML(title, categoryKey, list) {
-  list = Array.isArray(list) ? list : [];
-  var items = '';
-  for (var i = 0; i < list.length; i++) {
-    items += dishCardHTML(categoryKey, i, list[i]);
+  const safeList = Array.isArray(list) ? list : [];
+  let items = '';
+
+  for (let i = 0; i < safeList.length; i++) {
+    items += dishCardHTML(categoryKey, i, safeList[i]);
   }
+
   return ''
     + '<section class="category" id="' + categoryKey + '">'
     + '<h2 class="category__title">' + title + '</h2>'
@@ -66,7 +68,7 @@ function dishCardHTML(cat, i, it) {
 
 function loadBasket() {
   try {
-    var txt = localStorage.getItem(BASKET_KEY);
+    const txt = localStorage.getItem(BASKET_KEY);
     return txt ? JSON.parse(txt) : {};
   } catch (e) {
     return {};
@@ -80,25 +82,26 @@ function saveBasket(obj) {
 function itemId(categoryKey, idx) { return categoryKey + ':' + idx; }
 
 function getListByKey(key) {
-  for (var i = 0; i < CATALOG.length; i++) {
-    if (CATALOG[i].key === key) return CATALOG[i].list();
+  for (let i = 0; i < CATALOG.length; i++) {
+    const cat = CATALOG[i];
+    if (cat.key === key) return cat.list();
   }
   return [];
 }
 
 function itemFromCatalog(categoryKey, idx) {
-  var list = getListByKey(categoryKey);
+  const list = getListByKey(categoryKey);
   return list[idx];
 }
 
 function addToBasket(categoryKey, idx) {
-  var src = itemFromCatalog(categoryKey, idx);
+  const src = itemFromCatalog(categoryKey, idx);
   if (!src) return;
 
-  var id = itemId(categoryKey, idx);
-  var basket = loadBasket();
+  const id = itemId(categoryKey, idx);
+  const basket = loadBasket();
 
-  var current = basket[id];
+  let current = basket[id];
   if (!current) {
     current = { id: id, name: src.name, price: asNumber(src.price), qty: 0 };
   }
@@ -110,15 +113,16 @@ function addToBasket(categoryKey, idx) {
 }
 
 function incItem(id) {
-  var basket = loadBasket();
+  const basket = loadBasket();
   if (!basket[id]) return;
+
   basket[id].qty += 1;
   saveBasket(basket);
   renderBasket();
 }
 
 function decItem(id) {
-  var basket = loadBasket();
+  const basket = loadBasket();
   if (!basket[id]) return;
   basket[id].qty = Math.max(0, basket[id].qty - 1);
   if (basket[id].qty === 0) delete basket[id];
@@ -127,16 +131,16 @@ function decItem(id) {
 }
 
 function removeItem(id) {
-  var basket = loadBasket();
+  const basket = loadBasket();
   delete basket[id];
   saveBasket(basket);
   renderBasket();
 }
 
 function basketItemsArray() {
-  var obj = loadBasket();
-  var arr = [];
-  for (var id in obj) {
+  const obj = loadBasket();
+  const arr = [];
+  for (const id in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, id)) {
       arr.push(obj[id]);
     }
@@ -145,20 +149,20 @@ function basketItemsArray() {
 }
 
 function calcSubtotal(items) {
-  var sum = 0;
-  for (var i = 0; i < items.length; i++) {
+  let sum = 0;
+  for (let i = 0; i < items.length; i++) {
     sum += asNumber(items[i].price) * asNumber(items[i].qty);
   }
   return sum;
 }
 
 function renderBasket() {
-  var root = document.getElementById('basket');
-  var items = basketItemsArray();
+  const root = document.getElementById('basket');
+  const items = basketItemsArray();
 
-  var subtotal = calcSubtotal(items);
-  var delivery = items.length ? DELIVERY_FEE : 0;
-  var total = subtotal + delivery;
+  const subtotal = calcSubtotal(items);
+  const delivery = items.length ? DELIVERY_FEE : 0;
+  const total = subtotal + delivery;
 
   root.innerHTML = ''
     + '<div class="basket">'
@@ -177,8 +181,8 @@ function basketRowHTML(item) { return getBasketRowTemplate(item); }
 
 function basketListHTML(items) {
   if (!items || !items.length) return '<p>Dein Warenkorb ist leer.</p>';
-  var html = '';
-  for (var i = 0; i < items.length; i++) { html += basketRowHTML(items[i]); }
+  let html = '';
+  for (let i = 0; i < items.length; i++) html += basketRowHTML(items[i]);
   return html;
 }
 
@@ -210,7 +214,7 @@ function openCheckoutDialog(text) {
 }
 
 function checkout() {
-  var items = basketItemsArray();
+  const items = basketItemsArray();
   if (!items.length) return;
   saveBasket({});
   renderBasket();
@@ -218,8 +222,10 @@ function checkout() {
 }
 
 function getBasketCount() {
-  var obj = loadBasket(), id, count = 0;
-  for (id in obj) {
+  const obj = loadBasket();
+  let count = 0;
+
+  for (const id in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, id)) {
       count += parseFloat(obj[id].qty) || 0;
     }
@@ -228,32 +234,39 @@ function getBasketCount() {
 }
 
 function updateBasketFabCount() {
-  var btn = document.getElementById('basketFab');
+   const btn = document.getElementById('basketFab');
   if (!btn) return;
-  var c = getBasketCount();
+  const c = getBasketCount();
   btn.textContent = 'Warenkorb (' + c + ')';
 }
 
+function setBasketOpen(isOpen) {
+  const basketElement = document.getElementById('basket');
+  const backdropElement = document.getElementById('basketBackdrop');
+
+  if (!basketElement || !backdropElement) return;
+
+  if (isOpen) {
+    basketElement.classList.add('basket--open');
+    backdropElement.classList.add('is-open');
+  } else {
+    basketElement.classList.remove('basket--open');
+    backdropElement.classList.remove('is-open');
+  }
+}
+
 function openBasket() {
-  var el = document.getElementById('basket');
-  var bd = document.getElementById('basketBackdrop');
-  if (el) el.classList.add('basket--open');
-  if (bd) bd.style.display = 'block';
+  setBasketOpen(true);
 }
 
 function closeBasket() {
-  var el = document.getElementById('basket');
-  var bd = document.getElementById('basketBackdrop');
-  if (el) el.classList.remove('basket--open');
-  if (bd) bd.style.display = 'none';
+  setBasketOpen(false);
 }
 
 function toggleBasket() {
-  var el = document.getElementById('basket');
-  if (!el) return;
-  el.classList.contains('basket--open') ?
-    closeBasket() :
-    openBasket();
+  const basketElement = document.getElementById('basket');
+  const isOpen = basketElement && basketElement.classList.contains('basket--open');
+  setBasketOpen(!isOpen);
 }
 
 
