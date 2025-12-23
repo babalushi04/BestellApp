@@ -16,7 +16,7 @@
 }
 
 #basket .basket-list {
-    max-height: calc(60vh - 300px);
+    max-height: calc(60vh - 250px);
     overflow-y: auto;
 }
 
