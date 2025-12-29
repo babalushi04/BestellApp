@@ -17,18 +17,18 @@ The Ordering App is the **5th project** of my Frontend Developer training.
 
 ## 📂 Project Structure
 
-Ordering-App/
-├── index.html # Main page
-├── style.css # Styling and layout
-├── script.js # Dialog logic and navigation
-├── README.md # This file
-├── styles/
-├── scripts/
-└── assets/
-├── fonts/raleway/ # Raleway font (local)
-├── logo/ # Ordering App logo (SVG)
-├── pics/ # Gallery images
-└── favicon/ # Browser icon
+Ordering-App/ <br>
+├── index.html # Main page <br>
+├── style.css # Styling and layout <br>
+├── script.js # Dialog logic and navigation <br>
+├── README.md # This file <br>
+├── styles/ <br>
+├── scripts/ <br>
+└── assets/ <br>
+├── fonts/raleway/ # Raleway font (local) <br>
+├── logo/ # Ordering App logo (SVG) <br>
+├── pics/ # Gallery images <br>
+└── favicon/ # Browser icon <br>
 
 
 
