@@ -50,7 +50,7 @@ GitHub: [babalushi04](https://github.com/babalushi04)
 
 ---
 
-**Developed as part of the Developer Akademie – November 2025**
+**Developed as part of the Developer Akademie – Started in November 2025 Completed in December 2025**
 
 
 
